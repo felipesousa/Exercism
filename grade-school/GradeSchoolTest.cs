@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
+using System;
 
 [TestFixture]
 public class GradeSchoolTest
@@ -71,5 +72,29 @@ public class GradeSchoolTest
         Assert.That(school.Roster[3], Is.EqualTo(new List<string> { "Kyle" }));
         Assert.That(school.Roster[4], Is.EqualTo(new List<string> { "Christopher", "Jennifer" }));
         Assert.That(school.Roster[6], Is.EqualTo(new List<string> { "Kareem" }));
+    }
+
+    [Test]
+    public void Roster_is_immutable()
+    {
+        Assert.That(() => school.Roster.Add(1, new SortedSet<string>()), Throws.InstanceOf<NotSupportedException>());
+    }
+
+    [Test]
+    public void Grade_through_roster_is_immutable()
+    {
+        school.Add("Jennifer", 4);
+        Assert.That(() => school.Roster[4].Add("John"), Throws.InstanceOf<NotSupportedException>());
+        Assert.That(school.Roster[4].Count, Is.EqualTo(1));
+        Assert.That(school.Grade(4).Count, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void Grade_is_immutable()
+    {
+        school.Add("Jennifer", 4);
+        Assert.That(() => school.Grade(4).Add("John"), Throws.InstanceOf<NotSupportedException>());
+        Assert.That(school.Roster[4].Count, Is.EqualTo(1));
+        Assert.That(school.Grade(4).Count, Is.EqualTo(1));
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +11,22 @@ using System.Threading.Tasks;
 /// </summary>
 public class School
 {
-    public School ()
-	{
-        Roster = new Dictionary<uint, ISet<string>>();
-	}
-
+    private ImmutableDictionary<uint, ImmutableSortedSet<string>.Builder>.Builder _roster = ImmutableDictionary<uint, ImmutableSortedSet<string>.Builder>.Empty.ToBuilder();
+    
     /// <summary>
     /// The school roster. The key is the grade, the value is the list
     /// of students for that grade.
     /// </summary>
-    public IDictionary<uint, ISet<string>> Roster { get; private set; }
+    public IDictionary<uint, ISet<string>> Roster 
+    {
+        get
+        {
+            ImmutableDictionary<uint, ISet<string>>.Builder roster = ImmutableDictionary<uint, ISet<string>>.Empty.ToBuilder();
+            foreach(var pair in _roster)
+                roster.Add(pair.Key, pair.Value.ToImmutable());
+            return roster.ToImmutable();
+        }
+    }
 
     /// <summary>
     /// Adds the given student to the given grade
@@ -28,10 +35,12 @@ public class School
     /// <param name="grade"></param>
     public void Add(string student, uint grade)
     {
-        if (!Roster.ContainsKey(grade))
-            Roster[grade] = new SortedSet<string>();
+        if(string.IsNullOrWhiteSpace(student)) throw new ArgumentException("student cannot be null or empty");
 
-        Roster[grade].Add(student);
+        if (!_roster.ContainsKey(grade))
+            _roster[grade] = ImmutableSortedSet<string>.Empty.ToBuilder();
+
+        _roster[grade].Add(student);
     }
 
     /// <summary>
@@ -41,8 +50,8 @@ public class School
     /// <returns>A list of students</returns>
     public ISet<string> Grade(uint grade)
     {
-        if(!Roster.ContainsKey(grade))
-            return new SortedSet<string>();
-        return Roster[grade];
+        if(!_roster.ContainsKey(grade))
+            return ImmutableSortedSet<string>.Empty;
+        return _roster[grade].ToImmutable();
     }
 }
