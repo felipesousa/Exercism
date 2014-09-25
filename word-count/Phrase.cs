@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 public class Phrase
@@ -21,36 +22,17 @@ public class Phrase
     public IDictionary<string, int> WordCount()
     {
         var counts = new Dictionary<string, int>();
-        var sanitized = SanitizeString(_phrase);
-        var split = sanitized.Split(new []{ ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries);
-        foreach(string word in split)
+        Match match = Regex.Match(_phrase.ToLower(), @"[\w']+");
+        while(match.Success)
         {
-            if(counts.ContainsKey(word))
+            string word = match.Value;
+            if(!counts.ContainsKey(word))
             {
-                counts[word]++;
+                counts[word] = 0;
             }
-            else
-            {
-                counts[word] = 1;
-            }
+            counts[word]++;
+            match = match.NextMatch();
         }
         return counts;
-    }
-    
-    /// <summary>
-    /// Cleans up a given string and prepares it for processing
-    /// </summary>
-    /// <param name="str">The string to sanatize</param>
-    /// <returns>The string stripped of everything except, numbers,
-    /// letters, commas and conjunctions.</returns>
-    private static string SanitizeString(string str)
-    {
-        var sanitized = from c in str
-                        where Char.IsLetterOrDigit(c) ||
-                              Char.IsWhiteSpace(c) ||
-                              c == '\'' ||
-                              c == ','
-                        select Char.ToLower(c);
-        return new string(sanitized.ToArray());
     }
 }
