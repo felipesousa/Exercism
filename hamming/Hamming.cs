@@ -14,6 +14,9 @@ public static class Hamming
     /// <returns>The Hamming difference</returns>
     public static int Compute(string dna1, string dna2)
     {
+        if(String.IsNullOrWhiteSpace(dna1)) throw new ArgumentException("Cannot be null or empty", "dna1");
+        if(String.IsNullOrWhiteSpace(dna2)) throw new ArgumentException("Cannot be null or empty", "dna2");
+
         int diff = 0;
         for(int i = 0; i < dna1.Length && i < dna2.Length; i++)
         {
