@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 /// <summary>
 /// Bob is a lackadaisical teenager.
@@ -30,16 +31,7 @@ public class Bob
 
     private bool IsYelling(string conversation)
     {
-        bool foundLetter = false;
-        foreach(char c in conversation)
-        {
-            if (Char.IsLetter(c))
-            {
-                if (Char.IsLower(c)) return false;
-                foundLetter = true;
-            }
-        }
-        return foundLetter;
+        return conversation.Any(Char.IsLetter) && !conversation.Any(Char.IsLower);
     }
 
     private bool IsQuestion(string conversation)
