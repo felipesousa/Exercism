@@ -14,11 +14,15 @@ public static class ETL
     public static Dictionary<string, int> Transform(Dictionary<int, IList<string>> input)
     {
         var output = new Dictionary<string, int>();
+        if(input == null) return output;
         foreach(var pair in input)
         {
             foreach(var letter in pair.Value)
             {
-                output[letter.ToLower()] = pair.Key;
+                if(!String.IsNullOrWhiteSpace(letter))
+                {
+                    output[letter.ToLower()] = pair.Key;
+                }
             }
         }
         return output;
