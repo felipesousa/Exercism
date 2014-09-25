@@ -21,8 +21,8 @@ public class Phrase
     public IDictionary<string, int> WordCount()
     {
         var counts = new Dictionary<string, int>();
-        var sanatized = SanatizeString(_phrase);
-        var split = sanatized.Split(new []{ ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries);
+        var sanitized = SanitizeString(_phrase);
+        var split = sanitized.Split(new []{ ' ', '\t', ',' }, StringSplitOptions.RemoveEmptyEntries);
         foreach(string word in split)
         {
             if(counts.ContainsKey(word))
@@ -43,14 +43,14 @@ public class Phrase
     /// <param name="str">The string to sanatize</param>
     /// <returns>The string stripped of everything except, numbers,
     /// letters, commas and conjunctions.</returns>
-    private static string SanatizeString(string str)
+    private static string SanitizeString(string str)
     {
-        var sanatized = from c in str
+        var sanitized = from c in str
                         where Char.IsLetterOrDigit(c) ||
                               Char.IsWhiteSpace(c) ||
                               c == '\'' ||
                               c == ','
                         select Char.ToLower(c);
-        return new string(sanatized.ToArray());
+        return new string(sanitized.ToArray());
     }
 }
