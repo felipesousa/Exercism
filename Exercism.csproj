@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="leap\LeapTest.cs" />
-    <Compile Include="leap\Year.cs" />
+    <Compile Include="leap\Leap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
