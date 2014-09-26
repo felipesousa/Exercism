@@ -29,19 +29,19 @@ public class SumOfMultiples
         List<int> multiples = new List<int>();
         foreach(int baseMultiple in _baseMultiples)
         {
-            var found = from i in MyEnumerable.Range(baseMultiple, to, baseMultiple)
-                        where !multiples.Contains(i)
-                        select i;
+            var found =  Multiples
+                            .Range(baseMultiple, to, baseMultiple)
+                            .Where(i => !multiples.Contains(i));
             multiples.AddRange(found);
         }
         return multiples.Sum();
     }
 }
 
-public static class MyEnumerable
+public static class Multiples
 {
     /// <summary>
-    /// A version of Enumerable.Range that takes a increment value
+    /// A version of Enumerable.Range that takes an increment value
     /// </summary>
     /// <param name="start">The first number to return</param>
     /// <param name="stop">The exclusive max value</param>
