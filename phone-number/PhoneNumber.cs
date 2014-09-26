@@ -15,7 +15,7 @@ public class PhoneNumber
     /// <param name="number">A string representation of a phone number</param>
     public PhoneNumber(string number)
     {
-        Number = CleanPhoneNumber(number);
+        CleanPhoneNumber(number);
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ public class PhoneNumber
     /// <summary>
     /// Gets the area code portion of the phone number
     /// </summary>
-    public string AreaCode { get { return Number; } }
+    public string AreaCode { get { return Number.Substring(0, 3); } }
 
     /// <summary>
     /// Returns a <see cref="System.String" /> that represents this Phone number.
@@ -36,11 +36,25 @@ public class PhoneNumber
     /// </returns>
     public override string ToString()
     {
-        return base.ToString();
+        return string.Format("({0}) {1}-{2}", AreaCode, Number.Substring(3, 3), Number.Substring(6));
     }
 
-    private static string CleanPhoneNumber(string number)
+    private void CleanPhoneNumber(string number)
     {
-        return number;
+        // Strip everything but numbers
+        var digits = number.Where(c => char.IsDigit(c)).ToArray();
+        var clean = new string(digits);
+        if (clean.Length == 10)
+        {
+            Number = clean;
+        }
+        else if(clean.Length == 11 && clean[0] == '1')
+        {
+            Number = clean.Substring(1);
+        }
+        else
+        {
+            Number = "0000000000";
+        }
     }
 }
