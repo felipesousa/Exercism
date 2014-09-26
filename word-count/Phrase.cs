@@ -22,7 +22,7 @@ public class Phrase
     public IDictionary<string, int> WordCount()
     {
         var counts = new Dictionary<string, int>();
-        Match match = Regex.Match(_phrase.ToLower(), @"[\w']+");
+        Match match = Regex.Match(_phrase.ToLower(), @"\w+'\w+|\w+");
         while(match.Success)
         {
             string word = match.Value;
