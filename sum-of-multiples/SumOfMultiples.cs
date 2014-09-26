@@ -24,32 +24,18 @@ public class SumOfMultiples
         _baseMultiples = baseMultiples;
     }
 
+    /// <summary>
+    /// Sums all multiples up to but not including the given value
+    /// </summary>
+    /// <param name="to">The exclusive upper value</param>
+    /// <returns>The sum of the multiples</returns>
     public int To(int to)
     {
-        List<int> multiples = new List<int>();
-        foreach(int baseMultiple in _baseMultiples)
-        {
-            var found =  Multiples
-                            .Range(baseMultiple, to, baseMultiple)
-                            .Where(i => !multiples.Contains(i));
-            multiples.AddRange(found);
-        }
-        return multiples.Sum();
+        return Enumerable.Range(1, to - 1).Where(IsMultiple).Sum();
     }
-}
 
-public static class Multiples
-{
-    /// <summary>
-    /// A version of Enumerable.Range that takes an increment value
-    /// </summary>
-    /// <param name="start">The first number to return</param>
-    /// <param name="stop">The exclusive max value</param>
-    /// <param name="increment">The amount to increment by</param>
-    /// <returns></returns>
-    public static IEnumerable<int> Range(int start, int stop, int increment)
+    private bool IsMultiple(int value)
     {
-        for(int i = start; i < stop; i += increment)
-            yield return i;
+        return _baseMultiples.Any(baseMultiple => value % baseMultiple == 0);
     }
 }
