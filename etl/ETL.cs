@@ -17,6 +17,7 @@ public static class ETL
         if(input == null) return output;
         foreach(var pair in input)
         {
+            if(pair.Value == null) continue;
             foreach(var letter in pair.Value)
             {
                 if(!String.IsNullOrWhiteSpace(letter))

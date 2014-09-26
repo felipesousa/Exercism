@@ -60,7 +60,11 @@ public class ETLTest
     [Test]
     public void Handles_null_or_empty_values()
     {
-        var old = new Dictionary<int, IList<string>> { { 1, new List<string> { "A", "" } }, { 2, new List<string> { "D", null } } };
+        var old = new Dictionary<int, IList<string>> { 
+            { 1, new List<string> { "A", "" } }, 
+            { 2, new List<string> { "D", null } },
+            { 3, null }
+        };
         var expected = new Dictionary<string, int> { { "a", 1 }, { "d", 2 } };
         Assert.That(ETL.Transform(old), Is.EqualTo(expected));
     }
