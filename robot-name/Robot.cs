@@ -31,22 +31,26 @@ public class Robot
 
     private void GenerateRandomName()
     {
-        Name = string.Format("{0}{1}{2}{3}{4}",
+        Name = string.Format("{0}{1}{2:000}",
                                 GetRandomLetter(),
                                 GetRandomLetter(),
-                                GetRandomDigit(),
-                                GetRandomDigit(),
-                                GetRandomDigit()
+                                GetRandomDigits()
                             );
     }
 
+    /// <summary>
+    /// Gets a random letter from A to Z
+    /// </summary>
     private char GetRandomLetter()
     {
         return (char)('A' + _random.Next(26));
     }
 
-    private char GetRandomDigit()
+    /// <summary>
+    /// Gets a random three digit number
+    /// </summary>
+    private int GetRandomDigits()
     {
-        return (char)('0' + _random.Next(10));
+        return _random.Next(1000);
     }
 }
