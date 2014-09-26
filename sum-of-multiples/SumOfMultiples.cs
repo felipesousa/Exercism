@@ -6,39 +6,50 @@ using System.Threading.Tasks;
 
 public class SumOfMultiples
 {
-    private readonly IEnumerable<int> _bases;
+    private readonly IEnumerable<int> _baseMultiples;
 
     /// <summary>
-    /// Configures the class with the base multipliers 3 and 5.
+    /// Configures the class with the base multiples 3 and 5.
     /// </summary>
     public SumOfMultiples()
     {
-        _bases = new[] {3, 5};
+        _baseMultiples = new[] {3, 5};
     }
 
     /// <summary>
-    /// Configures the class with a set of base multipliers.
+    /// Configures the class with a set of base multiples.
     /// </summary>
-    public SumOfMultiples(IEnumerable<int> bases)
+    public SumOfMultiples(IEnumerable<int> baseMultiples)
     {
-        _bases = bases;
+        _baseMultiples = baseMultiples;
     }
 
     public int To(int to)
     {
-        int sum = 0;
-        IList<int> multiples = new List<int>();
-        foreach(int @base in _bases)
+        List<int> multiples = new List<int>();
+        foreach(int baseMultiple in _baseMultiples)
         {
-            for(int i = @base; i < to; i += @base )
-            {
-                if(!multiples.Contains(i))
-                {
-                    sum += i;
-                    multiples.Add(i);
-                }
-            }
+            var found = from i in MyEnumerable.Range(baseMultiple, to, baseMultiple)
+                        where !multiples.Contains(i)
+                        select i;
+            multiples.AddRange(found);
         }
-        return sum;
+        return multiples.Sum();
+    }
+}
+
+public static class MyEnumerable
+{
+    /// <summary>
+    /// A version of Enumerable.Range that takes a increment value
+    /// </summary>
+    /// <param name="start">The first number to return</param>
+    /// <param name="stop">The exclusive max value</param>
+    /// <param name="increment">The amount to increment by</param>
+    /// <returns></returns>
+    public static IEnumerable<int> Range(int start, int stop, int increment)
+    {
+        for(int i = start; i < stop; i += increment)
+            yield return i;
     }
 }
