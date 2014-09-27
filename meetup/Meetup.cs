@@ -48,6 +48,7 @@ public class Meetup
             case Schedule.Teenth:
                 return CalculateTeenthMeetup(dayOfWeek, schedule);
             default:
+                // Just in case someone adds a new enum in the future
                 throw new NotSupportedException(string.Format("Schedule {0} is not supported", schedule));
         }
     }
@@ -67,14 +68,18 @@ public class Meetup
         return FindDayInWeek(_startOfMonth.AddDays(12), dayOfWeek);
     }
 
+    /// <summary>
+    /// Checks the seven days of the given week to see if they are the
+    /// correct day of the week.
+    /// </summary>
+    /// <param name="day">The first day of the week</param>
+    /// <param name="dayOfWeek">The day of the week to find</param>
+    /// <returns>The date found</returns>
     private DateTime FindDayInWeek(DateTime day, DayOfWeek dayOfWeek)
     {
-        for (int i = 0; i < 7; i++, day = day.AddDays(1))
-        {
-            if (day.DayOfWeek == dayOfWeek)
-                break;
-        }
-        return day;
+        return (from i in Enumerable.Range(0, 7)
+                where day.AddDays(i).DayOfWeek == dayOfWeek
+                select day.AddDays(i)).FirstOrDefault();
     }
 }
 
