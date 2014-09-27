@@ -57,6 +57,8 @@
     <Compile Include="hamming\HammingTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
     <Compile Include="leap\Leap.cs" />
+    <Compile Include="meetup\Meetup.cs" />
+    <Compile Include="meetup\MeetupTest.cs" />
     <Compile Include="nucleotide-count\DNA.cs" />
     <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
@@ -76,6 +78,7 @@
     <None Include="grade-school\README.md" />
     <None Include="hamming\README.md" />
     <None Include="leap\README.md" />
+    <None Include="meetup\README.md" />
     <None Include="nucleotide-count\README.md" />
     <None Include="packages.config" />
     <None Include="phone-number\README.md" />
