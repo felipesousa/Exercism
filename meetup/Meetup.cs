@@ -33,23 +33,16 @@ public class Meetup
     /// <param name="dayOfWeek">The day of week.</param>
     /// <param name="schedule">The scheduled week of the meetup.</param>
     /// <returns>The date of the meetup.</returns>
-    /// <exception cref="System.NotSupportedException"></exception>
     public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule)
     {
         switch(schedule)
         {
-            case Schedule.First:
-            case Schedule.Second:
-            case Schedule.Third:
-            case Schedule.Fourth:
-                return CalculateMeetup(dayOfWeek, schedule);
             case Schedule.Last:
                 return CalculateLastWeekMeetup(dayOfWeek, schedule);
             case Schedule.Teenth:
                 return CalculateTeenthMeetup(dayOfWeek, schedule);
             default:
-                // Just in case someone adds a new enum in the future
-                throw new NotSupportedException(string.Format("Schedule {0} is not supported", schedule));
+                return CalculateMeetup(dayOfWeek, schedule);
         }
     }
 
