@@ -55,7 +55,7 @@ public class Meetup
 
     private DateTime CalculateMeetup(DayOfWeek dayOfWeek, Schedule schedule)
     {
-        return FindDayInWeek(_startOfMonth.AddDays((int)schedule), dayOfWeek);
+        return FindDayInWeek(_startOfMonth.AddDays((int)schedule*7), dayOfWeek);
     }
 
     private DateTime CalculateLastWeekMeetup(DayOfWeek dayOfWeek, Schedule schedule)
@@ -91,13 +91,13 @@ public enum Schedule
     /// <summary>First week of the month</summary>
     First = 0,
     /// <summary>Second week of the month</summary>
-    Second = 7,
+    Second = 1,
     /// <summary>Third week of the month</summary>
-    Third = 14,
+    Third = 2,
     /// <summary>Fourth week of the month</summary>
-    Fourth = 21,
+    Fourth = 3,
     /// <summary>Last week of the month</summary>
-    Last = 31,
+    Last = 4,
     /// <summary>The days of the month that end in 'teenth'</summary>
-    Teenth = 10
+    Teenth = 5
 }
