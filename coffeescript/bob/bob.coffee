@@ -9,10 +9,11 @@ class Bob
   @returns - What Bob says back to you
   ###
   hey: (conversation) ->
-    if is_silence conversation then "Fine. Be that way!"
-    else if is_yelling conversation then "Whoa, chill out!"
-    else if is_question conversation then "Sure."
-    else "Whatever."
+    switch
+      when is_silence conversation then "Fine. Be that way!"
+      when is_yelling conversation then "Whoa, chill out!"
+      when is_question conversation then "Sure."
+      else "Whatever."
 
   is_silence = (conversation) ->
     conversation.trim() == ""
