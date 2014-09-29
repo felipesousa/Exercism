@@ -57,6 +57,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accumulate\accumulate.js">
+      <DependentUpon>accumulate.coffee</DependentUpon>
+    </Content>
+    <Content Include="accumulate\accumulate.min.js">
+      <DependentUpon>accumulate.js</DependentUpon>
+    </Content>
+    <Content Include="accumulate\accumulate_test.spec.js">
+      <DependentUpon>accumulate_test.spec.coffee</DependentUpon>
+    </Content>
+    <Content Include="accumulate\accumulate_test.spec.min.js">
+      <DependentUpon>accumulate_test.spec.js</DependentUpon>
+    </Content>
     <Content Include="bob\bob.coffee" />
     <Content Include="bob\bob.js">
       <DependentUpon>bob.coffee</DependentUpon>
@@ -99,6 +111,21 @@
     </Content>
     <Content Include="accumulate\accumulate_test.spec.coffee" />
     <Content Include="accumulate\README.md" />
+    <Content Include="accumulate\accumulate_test.spec.js.map">
+      <DependentUpon>accumulate_test.spec.js</DependentUpon>
+    </Content>
+    <Content Include="accumulate\accumulate_test.spec.min.js.map">
+      <DependentUpon>accumulate_test.spec.min.js</DependentUpon>
+    </Content>
+    <Content Include="accumulate\accumulate.coffee" />
+    <Content Include="accumulate\accumulate.js.map">
+      <DependentUpon>accumulate.js</DependentUpon>
+    </Content>
+    <Content Include="accumulate\accumulate.min.js.map">
+      <DependentUpon>accumulate.min.js</DependentUpon>
+    </Content>
+    <Content Include="binary\binary_test.spec.coffee" />
+    <Content Include="binary\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
