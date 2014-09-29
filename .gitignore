@@ -161,4 +161,5 @@ packages
 # Coffeescript/Node.js
 # =========================
 node_modules
-
+coffeescript/*/*.js
+coffeescript/*/*.js.map

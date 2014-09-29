@@ -58,8 +58,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bob\bob.coffee" />
+    <Content Include="bob\bob.js">
+      <DependentUpon>bob.coffee</DependentUpon>
+    </Content>
+    <Content Include="bob\bob.min.js">
+      <DependentUpon>bob.js</DependentUpon>
+    </Content>
     <Content Include="bob\bob_test.spec.coffee" />
+    <Content Include="bob\bob_test.spec.js">
+      <DependentUpon>bob_test.spec.coffee</DependentUpon>
+    </Content>
+    <Content Include="bob\bob_test.spec.min.js">
+      <DependentUpon>bob_test.spec.js</DependentUpon>
+    </Content>
     <Content Include="bob\README.md" />
+    <Content Include="test.bat" />
+    <Content Include="bob\bob_test.spec.js.map">
+      <DependentUpon>bob_test.spec.js</DependentUpon>
+    </Content>
+    <Content Include="bob\bob_test.spec.min.js.map">
+      <DependentUpon>bob_test.spec.min.js</DependentUpon>
+    </Content>
+    <Content Include="bob\bob.js.map">
+      <DependentUpon>bob.js</DependentUpon>
+    </Content>
+    <Content Include="bob\bob.min.js.map">
+      <DependentUpon>bob.min.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
