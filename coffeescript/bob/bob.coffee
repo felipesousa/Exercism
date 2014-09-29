@@ -16,10 +16,10 @@ class Bob
       else "Whatever."
 
   is_silence = (conversation) ->
-    conversation.trim() == ""
+    conversation.trim() is ""
 
   is_yelling = (conversation) ->
-    conversation.match(/[A-Z]/) && !conversation.match(/[a-z]/)
+    conversation.match(/[A-Z]/) and not conversation.match(/[a-z]/)
 
   is_question = (conversation) ->
     conversation.match(/\?$/)
