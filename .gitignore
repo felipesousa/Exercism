@@ -156,3 +156,9 @@ $RECYCLE.BIN/
 .DS_Store
 
 packages
+
+# =========================
+# Coffeescript/Node.js
+# =========================
+node_modules
+
