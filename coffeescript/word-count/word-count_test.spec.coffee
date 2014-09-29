@@ -42,3 +42,28 @@ describe "Words", ->
     words = new Words "go Go GO"
     expect(words.count).toEqual
       go: 3
+  
+  it "handles apostrophes", ->                      
+    words = new Words "First: don't laugh. Then: don't cry."
+    expect(words.count).toEqual
+            first: 1
+            "don't": 2
+            laugh: 1
+            then:  1
+            cry:   1
+      
+  it "handles free standing apostrophes", ->
+    words = new Words "go ' Go '' GO"
+    expect(words.count).toEqual
+      go: 3
+      
+  it "handles apostrophes as quotes", ->
+    words = new Words "She said, 'let's meet at twelve o'clock'"
+    expect(words.count).toEqual
+      she: 1
+      said: 1
+      "let's": 1
+      meet: 1
+      at:1
+      twelve: 1
+      "o'clock": 1

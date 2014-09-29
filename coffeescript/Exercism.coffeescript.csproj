@@ -85,12 +85,39 @@
     <Content Include="bob\bob.min.js.map">
       <DependentUpon>bob.min.js</DependentUpon>
     </Content>
+    <Content Include="word-count\word-count_test.spec.js">
+      <DependentUpon>word-count_test.spec.coffee</DependentUpon>
+    </Content>
+    <Content Include="word-count\word-count_test.spec.min.js">
+      <DependentUpon>word-count_test.spec.js</DependentUpon>
+    </Content>
+    <Content Include="word-count\words.js">
+      <DependentUpon>words.coffee</DependentUpon>
+    </Content>
+    <Content Include="word-count\words.min.js">
+      <DependentUpon>words.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="word-count\README.md" />
+    <Content Include="word-count\word-count_test.spec.coffee" />
+    <Content Include="word-count\word-count_test.spec.js.map">
+      <DependentUpon>word-count_test.spec.js</DependentUpon>
+    </Content>
+    <Content Include="word-count\word-count_test.spec.min.js.map">
+      <DependentUpon>word-count_test.spec.min.js</DependentUpon>
+    </Content>
+    <Content Include="word-count\words.coffee" />
+    <Content Include="word-count\words.js.map">
+      <DependentUpon>words.js</DependentUpon>
+    </Content>
+    <Content Include="word-count\words.min.js.map">
+      <DependentUpon>words.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
