@@ -97,6 +97,8 @@
     <Content Include="word-count\words.min.js">
       <DependentUpon>words.js</DependentUpon>
     </Content>
+    <Content Include="accumulate\accumulate_test.spec.coffee" />
+    <Content Include="accumulate\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
