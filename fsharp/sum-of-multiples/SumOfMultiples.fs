@@ -1,8 +1,5 @@
 ﻿module SumOfMultiples
 
-open System.Collections.Generic
-open System.Linq
-
 type SumOfMultiples(baseMultiples) =         
     
     let multipleOf value =
