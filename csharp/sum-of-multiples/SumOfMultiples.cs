@@ -11,10 +11,7 @@ public class SumOfMultiples
     /// <summary>
     /// Configures the class with the base multiples 3 and 5.
     /// </summary>
-    public SumOfMultiples()
-    {
-        _baseMultiples = new[] {3, 5};
-    }
+    public SumOfMultiples() : this(new[] {3, 5}) { }
 
     /// <summary>
     /// Configures the class with a set of base multiples.
