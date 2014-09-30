@@ -24,8 +24,5 @@ class Bob
   is_question = (conversation) ->
     conversation.match(/\?$/)
     
-  contains_letters = (conversation) ->
-    conversation.match(/[A-Za-z]/)
-    
 module.exports = Bob
 
