@@ -75,6 +75,27 @@
     <Content Include="anagram\anagram_test.spec.js">
       <DependentUpon>anagram_test.spec.coffee</DependentUpon>
     </Content>
+    <Content Include="anagram\anagram_test.spec.coffee" />
+    <Content Include="anagram\README.md" />
+    <Content Include="anagram\anagram_test.spec.js.map">
+      <DependentUpon>anagram_test.spec.js</DependentUpon>
+    </Content>
+    <Content Include="anagram\anagram.coffee" />
+    <Content Include="anagram\anagram.js.map">
+      <DependentUpon>anagram.js</DependentUpon>
+    </Content>
+    <Content Include="binary\Binary.js">
+      <DependentUpon>Binary.coffee</DependentUpon>
+    </Content>
+    <Content Include="binary\Binary.min.js">
+      <DependentUpon>Binary.js</DependentUpon>
+    </Content>
+    <Content Include="binary\binary_test.spec.js">
+      <DependentUpon>binary_test.spec.coffee</DependentUpon>
+    </Content>
+    <Content Include="binary\binary_test.spec.min.js">
+      <DependentUpon>binary_test.spec.js</DependentUpon>
+    </Content>
     <Content Include="bob\bob.coffee" />
     <Content Include="bob\bob.js">
       <DependentUpon>bob.coffee</DependentUpon>
@@ -132,16 +153,19 @@
     </Content>
     <Content Include="binary\binary_test.spec.coffee" />
     <Content Include="binary\README.md" />
-    <Content Include="anagram\anagram_test.spec.coffee" />
-    <Content Include="anagram\README.md" />
-    <Content Include="anagram\anagram_test.spec.js.map">
-      <DependentUpon>anagram_test.spec.js</DependentUpon>
+    <Content Include="binary\binary_test.spec.js.map">
+      <DependentUpon>binary_test.spec.js</DependentUpon>
     </Content>
-    <Content Include="anagram\anagram.coffee" />
-    <Content Include="anagram\anagram.js.map">
-      <DependentUpon>anagram.js</DependentUpon>
+    <Content Include="binary\binary_test.spec.min.js.map">
+      <DependentUpon>binary_test.spec.min.js</DependentUpon>
     </Content>
     <Content Include="binary\Binary.coffee" />
+    <Content Include="binary\Binary.js.map">
+      <DependentUpon>Binary.js</DependentUpon>
+    </Content>
+    <Content Include="binary\Binary.min.js.map">
+      <DependentUpon>Binary.min.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
