@@ -39,8 +39,11 @@ public class TwelveDaysSong
     /// <returns>The requested verse</returns>
     public string Verse(int verse)
     {
-        if(verse < 1 || verse > 12) throw new ArgumentException("Verse must be between 1 and 12");
-        var gifts = verse > 1 ? GIFTS.Skip(12 - verse).Take(verse) : new[] { FIRST_GIFT };
+        if(verse < 1 || verse > 12) 
+            throw new ArgumentException("Verse must be between 1 and 12");
+        var gifts = verse > 1 ? 
+            GIFTS.Skip(12 - verse).Take(verse) : 
+            new[] { FIRST_GIFT };
         return string.Format(VERSE, DAYS[verse - 1], string.Concat(gifts));
     }
 
@@ -52,7 +55,10 @@ public class TwelveDaysSong
     /// <returns>The requested verses</returns>
     public string Verses(int start, int end)
     {
-        var verses = from verse in Enumerable.Range(start, end - start + 1) select Verse(verse) + "\n";
+        if (end < start) 
+            throw new ArgumentException("End must be greater than start");
+        var verses = from verse in Enumerable.Range(start, end - start + 1) 
+                     select Verse(verse) + "\n";
         return string.Concat(verses);
     }
 
