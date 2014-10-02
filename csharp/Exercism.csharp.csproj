@@ -68,6 +68,8 @@
     <Compile Include="robot-name\RobotNameTest.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiples.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />
+    <Compile Include="twelve-days\TwelveDaysSong.cs" />
+    <Compile Include="twelve-days\TwelveDaysTest.cs" />
     <Compile Include="word-count\Phrase.cs" />
     <Compile Include="word-count\WordCountTest.cs" />
   </ItemGroup>
@@ -84,6 +86,7 @@
     <None Include="phone-number\README.md" />
     <None Include="robot-name\README.md" />
     <None Include="sum-of-multiples\README.md" />
+    <None Include="twelve-days\README.md" />
     <None Include="word-count\README.md" />
   </ItemGroup>
   <ItemGroup>
