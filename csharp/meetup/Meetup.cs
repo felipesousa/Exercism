@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 /// </summary>
 public class Meetup
 {
+    private const int DAYS_PER_WEEK = 7;
+
     private DateTime _startOfMonth;
 
     /// <summary>
@@ -48,12 +50,12 @@ public class Meetup
 
     private DateTime CalculateMeetup(DayOfWeek dayOfWeek, Schedule schedule)
     {
-        return FindDayInWeek(_startOfMonth.AddDays((int)schedule*7), dayOfWeek);
+        return FindDayInWeek(_startOfMonth.AddDays((int)schedule * DAYS_PER_WEEK), dayOfWeek);
     }
 
     private DateTime CalculateLastWeekMeetup(DayOfWeek dayOfWeek, Schedule schedule)
     {
-        return FindDayInWeek(_startOfMonth.AddMonths(1).AddDays(-7), dayOfWeek);
+        return FindDayInWeek(_startOfMonth.AddMonths(1).AddDays(-DAYS_PER_WEEK), dayOfWeek);
     }
 
     private DateTime CalculateTeenthMeetup(DayOfWeek dayOfWeek, Schedule schedule)
@@ -70,9 +72,7 @@ public class Meetup
     /// <returns>The date found</returns>
     private DateTime FindDayInWeek(DateTime day, DayOfWeek dayOfWeek)
     {
-        return (from i in Enumerable.Range(0, 7)
-                where day.AddDays(i).DayOfWeek == dayOfWeek
-                select day.AddDays(i)).FirstOrDefault();
+        return day.AddDays((((int)dayOfWeek - (int)day.DayOfWeek) + DAYS_PER_WEEK) % DAYS_PER_WEEK);
     }
 }
 
