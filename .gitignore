@@ -163,3 +163,8 @@ packages
 node_modules
 coffeescript/*/*.js
 coffeescript/*/*.js.map
+
+# =========================
+# Python
+# =========================
+*.pyc
