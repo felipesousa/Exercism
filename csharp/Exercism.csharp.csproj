@@ -51,6 +51,8 @@
     <Compile Include="bob\BobTest.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
+    <Compile Include="gigasecond\GigaSecond.cs" />
+    <Compile Include="gigasecond\GigasecondTest.cs" />
     <Compile Include="grade-school\GradeSchoolTest.cs" />
     <Compile Include="grade-school\School.cs" />
     <Compile Include="hamming\Hamming.cs" />
@@ -79,6 +81,7 @@
     <None Include="anagram\README.md" />
     <None Include="bob\README.md" />
     <None Include="etl\README.md" />
+    <None Include="gigasecond\README.md" />
     <None Include="grade-school\README.md" />
     <None Include="hamming\README.md" />
     <None Include="leap\README.md" />
