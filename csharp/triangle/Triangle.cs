@@ -1,8 +1,9 @@
 using System;
+using System.Linq;
 
 public class Triangle
 {
-    private readonly decimal _a, _b, _c;
+    private readonly decimal[] _sides;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Triangle"/> class.
@@ -11,12 +12,10 @@ public class Triangle
     /// <param name="b">The second side</param>
     /// <param name="c">The third side</param>
     /// <exception cref="TriangleException">Thrown if this is not a valid triangle</exception>
-    public Triangle( decimal a, decimal b, decimal c )
+    public Triangle(decimal a, decimal b, decimal c)
     {
         if(!Valid(a, b, c)) throw new TriangleException();
-        _a = a;
-        _b = b;
-        _c = c;
+        _sides = new[] { a, b, c };
     }
 
     /// <summary>
@@ -24,9 +23,7 @@ public class Triangle
     /// </summary>
     public TriangleKind Kind()
     {
-        if(IsEquilateral()) return TriangleKind.Equilateral;
-        if(IsIsosceles())   return TriangleKind.Isosceles;
-        return TriangleKind.Scalene;
+        return (TriangleKind)DistinctSides();
     }
 
     private static bool Valid(decimal a, decimal b, decimal c)
@@ -34,14 +31,9 @@ public class Triangle
         return a + b > c && b + c > a && a + c > b;
     }
 
-    private bool IsEquilateral()
+    private int DistinctSides()
     {
-        return _a == _b && _b == _c;
-    }
-
-    private bool IsIsosceles()
-    {
-        return _a == _b || _b == _c || _a == _c;
+        return _sides.Distinct().Count();
     }
 }
 
@@ -50,18 +42,12 @@ public class Triangle
 /// </summary>
 public class TriangleException : Exception
 {
-    public TriangleException()
-        : base("Invalid triangle")
-    {
-    }
+    public TriangleException() : base("Invalid triangle") { }
 }
 
 public enum TriangleKind
 {
-    /// <summary>A triangle with all sides equal</summary>
-    Equilateral,
-    /// <summary>A triangle with two sides equal</summary>
-    Isosceles,
-    /// <summary>A triangle with no sides equal</summary>
-    Scalene
+    Equilateral = 1,
+    Isosceles = 2,
+    Scalene = 3
 }
