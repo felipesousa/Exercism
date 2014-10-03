@@ -23,7 +23,6 @@ public class Gigasecond
     /// <returns></returns>
     public DateTime Date()
     {
-        var exact = _birthday.AddSeconds( GIGASECOND );
-        return new DateTime(exact.Year, exact.Month, exact.Day);
+        return _birthday.AddSeconds( GIGASECOND ).Date;
     }
 }
