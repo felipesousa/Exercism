@@ -5,7 +5,7 @@
 /// </summary>
 public class Gigasecond
 {
-    private static readonly double GIGASECOND = Math.Pow(10, 9);
+    private static readonly double GIGASECOND = 1E9;
     private readonly DateTime _birthday;
 
     /// <summary>
