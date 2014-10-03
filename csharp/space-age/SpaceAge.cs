@@ -25,37 +25,42 @@ public class SpaceAge
 
     public decimal OnMercury()
     {
-        return Decimal.Round(OnEarthAccurate / MERCURY_YEAR, 2);
+        return Calculate(MERCURY_YEAR);
     }
 
     public decimal OnVenus()
     {
-        return Decimal.Round(OnEarthAccurate / VENUS_YEAR, 2);
+        return Calculate(VENUS_YEAR);
     }
 
     public decimal OnMars()
     {
-        return Decimal.Round(OnEarthAccurate / MARS_YEAR, 2);
+        return Calculate(MARS_YEAR);
     }
 
     public decimal OnJupiter()
     {
-        return Decimal.Round(OnEarthAccurate / JUPITER_YEAR, 2);
+        return Calculate(JUPITER_YEAR);
     }
 
     public decimal OnSaturn()
     {
-        return Decimal.Round(OnEarthAccurate / SATURN_YEAR, 2);
+        return Calculate(SATURN_YEAR);
     }
 
     public decimal OnUranus()
     {
-        return Decimal.Round(OnEarthAccurate / URANUS_YEAR, 2);
+        return Calculate(URANUS_YEAR);
     }
 
     public decimal OnNeptune()
     {
-        return Decimal.Round(OnEarthAccurate / NEPTUNE_YEAR, 2);
+        return Calculate(NEPTUNE_YEAR);
+    }
+
+    private decimal Calculate(decimal earthYears)
+    {
+        return Decimal.Round(OnEarthAccurate / earthYears, 2);
     }
 
     private decimal OnEarthAccurate { get { return Seconds / EARTH_YEAR; } }
