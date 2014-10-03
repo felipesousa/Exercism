@@ -2,31 +2,36 @@ using System;
 
 public class Triangle
 {
-    private readonly decimal _a;
-    private readonly decimal _b;
-    private readonly decimal _c;
+    private readonly decimal _a, _b, _c;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Triangle"/> class.
+    /// </summary>
+    /// <param name="a">The first side</param>
+    /// <param name="b">The second side</param>
+    /// <param name="c">The third side</param>
+    /// <exception cref="TriangleException">Thrown if this is not a valid triangle</exception>
     public Triangle( decimal a, decimal b, decimal c )
     {
+        if(!Valid(a, b, c)) throw new TriangleException();
         _a = a;
         _b = b;
         _c = c;
     }
 
+    /// <summary>
+    /// Gets what kind of triangle this is
+    /// </summary>
     public TriangleKind Kind()
     {
-        if (!Valid()) 
-            throw new TriangleException();
-        if(IsEquilateral()) 
-            return TriangleKind.Equilateral;
-        if(IsIsosceles()) 
-            return TriangleKind.Isosceles;
+        if(IsEquilateral()) return TriangleKind.Equilateral;
+        if(IsIsosceles())   return TriangleKind.Isosceles;
         return TriangleKind.Scalene;
     }
 
-    private bool Valid()
+    private static bool Valid(decimal a, decimal b, decimal c)
     {
-        return _a + _b > _c && _b + _c > _a && _a + _c > _b;
+        return a + b > c && b + c > a && a + c > b;
     }
 
     private bool IsEquilateral()
