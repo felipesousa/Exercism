@@ -37,8 +37,8 @@ public class Scrabble
     public static int Score(string word)
     {
         if (word == null) return 0;
-        return word
-            .Where(letter => _values.ContainsKey(char.ToUpper(letter)))
-            .Sum(letter => _values[char.ToUpper(letter)]);
+        return word.ToUpper()
+            .Where(letter => _values.ContainsKey(letter))
+            .Sum(letter => _values[letter]);
     }
 }
