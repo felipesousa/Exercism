@@ -27,6 +27,7 @@ public class RomanNumeralsTest
     [TestCase(1024, Result = "MXXIV")]
     [TestCase(3000, Result = "MMM")]
     [TestCase(3899, Result = "MMMDCCCXCIX")]
+    [TestCase(3999, Result = "MMMCMXCIX")]
     public string Convert_roman_to_arabic_numerals(int arabicNumeral)
     {
         return arabicNumeral.ToRoman();
