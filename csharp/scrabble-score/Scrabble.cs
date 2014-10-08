@@ -3,9 +3,8 @@ using System.Linq;
 
 public class Scrabble
 {
+    private static readonly Dictionary<char, int> _values = new Dictionary<char, int>(26);
     private readonly string _word;
-
-    private static Dictionary<char, int> _values = new Dictionary<char, int>(26);
 
     static Scrabble()
     {
