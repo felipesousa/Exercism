@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="anagram\Anagram.cs" />
     <Compile Include="anagram\AnagramTest.cs" />
+    <Compile Include="binary\Binary.cs" />
+    <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
     <Compile Include="etl\ETL.cs" />
@@ -85,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="anagram\README.md" />
+    <None Include="binary\README.md" />
     <None Include="bob\README.md" />
     <None Include="etl\README.md" />
     <None Include="gigasecond\README.md" />
