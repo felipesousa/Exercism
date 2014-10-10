@@ -13,8 +13,8 @@ public class Binary
 
     public int ToDecimal()
     {
-        return _binary.Select( ( c, i ) => _binary[_binary.Length - i - 1] == '1' ? 1 : 0 )
-                      .Select( ( digit, i ) => digit << i )
+        return _binary.Reverse()
+                      .Select((c, i) => c == '1' ? 1 << i : 0)
                       .Sum();
     }
 
