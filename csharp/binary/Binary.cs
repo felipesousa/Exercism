@@ -20,6 +20,7 @@ public class Binary
 
     private static bool IsValid(string binary)
     {
-        return !Regex.Match(binary, "[^01]").Success;
+        return !string.IsNullOrWhiteSpace( binary ) &&
+            !Regex.Match(binary, "[^01]").Success;
     }
 }
