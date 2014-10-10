@@ -14,7 +14,7 @@ public class Binary
     public int ToDecimal()
     {
         return _binary.Select( ( c, i ) => _binary[_binary.Length - i - 1] == '1' ? 1 : 0 )
-                      .Select( ( digit, i ) => (int)Math.Pow(2, i) * digit )
+                      .Select( ( digit, i ) => digit << i )
                       .Sum();
     }
 
