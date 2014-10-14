@@ -21,6 +21,9 @@
     <ClInclude Include="bob\bob.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="word-count\word_count.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Exercism.cpp">
@@ -29,8 +32,12 @@
     <ClCompile Include="bob\bob_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="word-count\word_count_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="bob\README.md" />
+    <None Include="word-count\README.md" />
   </ItemGroup>
 </Project>

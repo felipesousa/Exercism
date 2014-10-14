@@ -82,13 +82,16 @@
   <ItemGroup>
     <ClInclude Include="bob\bob.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="word-count\word_count.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bob\bob_test.cpp" />
     <ClCompile Include="Exercism.cpp" />
+    <ClCompile Include="word-count\word_count_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bob\README.md" />
+    <None Include="word-count\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
