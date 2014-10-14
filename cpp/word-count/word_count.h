@@ -4,20 +4,19 @@
 #include <boost/regex.hpp>
 #include <boost/algorithm/string.hpp>
 
-class word_count
+namespace word_count
 {
-public:
-    static std::map<std::string, int> words( const std::string& sentence )
+    std::map<std::string, int> words( const std::string& sentence )
     {
         static const boost::regex regex( "\\w+'\\w+|\\w+" );
         std::map<std::string, int> count;
         std::string normalized = boost::to_lower_copy( sentence );
 
-        boost::sregex_token_iterator i( normalized.begin(), normalized.end(), regex, 0 );
+        boost::sregex_token_iterator i( normalized.begin(), normalized.end(), regex );
         boost::sregex_token_iterator end;
-        for ( ; i != end; ++i )
+        while ( i != end )
         {
-            std::string word( i->first, i->second );
+            std::string word = *i++;
             if ( count.count( word ) == 0 )
             {
                 count[word] = 0;
