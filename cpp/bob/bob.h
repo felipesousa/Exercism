@@ -10,7 +10,7 @@
 class bob
 {
 public:
-    static std::string hey( std::string conversation )
+    static std::string hey( const std::string& conversation )
     {
         if ( isSilence( conversation ) ) return SILENCE_RESPONSE;
         if ( isYelling( conversation ) ) return YELLING_RESPONSE;
@@ -19,18 +19,18 @@ public:
     }
 
 private:
-    static bool isSilence( std::string& conversation )
+    static bool isSilence( const std::string& conversation )
     {
         return conversation.find_first_not_of( ' ' ) == std::string::npos;
     }
 
-    static bool isYelling( std::string& conversation )
+    static bool isYelling( const std::string& conversation )
     {
         return boost::to_upper_copy(conversation) == conversation &&
                boost::to_lower_copy(conversation) != conversation;
     }
 
-    static bool isQuestion( std::string& conversation )
+    static bool isQuestion( const std::string& conversation )
     {
         return conversation.back() == '?';
     }
