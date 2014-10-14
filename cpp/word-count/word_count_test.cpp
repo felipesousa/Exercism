@@ -118,9 +118,7 @@ BOOST_AUTO_TEST_CASE(with_apostrophes)
 
 BOOST_AUTO_TEST_CASE(with_free_standing_apostrophes)
 {
-    const map<string, int> expected{
-            { "go", 3 },
-    };
+    const map<string, int> expected{{ "go", 3 }};
     const auto actual = word_count::words( "go ' Go '' GO" );
 
     REQUIRE_EQUAL_CONTAINERS( expected, actual );
