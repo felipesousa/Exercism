@@ -12,16 +12,11 @@ namespace word_count
         std::map<std::string, int> count;
         std::string normalized = boost::to_lower_copy( sentence );
 
-        boost::sregex_token_iterator i( normalized.begin(), normalized.end(), regex );
+        boost::sregex_token_iterator word( normalized.begin(), normalized.end(), regex );
         boost::sregex_token_iterator end;
-        while ( i != end )
+        while ( word != end )
         {
-            std::string word = *i++;
-            if ( count.count( word ) == 0 )
-            {
-                count[word] = 0;
-            }
-            count[word]++;
+            count[*word++]++;
         }
         return count;
     }
