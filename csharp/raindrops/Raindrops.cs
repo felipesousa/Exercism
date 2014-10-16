@@ -1,38 +1,26 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 public static class Raindrops
 {
-    private const string PLING = "Pling";
-    private const string PLANG = "Plang";
-    private const string PLONG = "Plong";
+    private static readonly IDictionary<int, string> rain = 
+        new Dictionary<int, string>
+        {
+            { 3, "Pling" }, { 5, "Plang" }, { 7, "Plong" }
+        };
 
     public static string Convert(int number)
     {
-        var builder = new StringBuilder();
-        foreach(var factor in PrimeFactors(number).Distinct())
-        {
-            switch(factor)
-            {
-                case 3:
-                    builder.Append(PLING);
-                    break;
-                case 5:
-                    builder.Append(PLANG);
-                    break;
-                case 7:
-                    builder.Append(PLONG);
-                    break;
-            }
-        }
-        if(builder.Length == 0)
-            builder.Append(number);
-
-        return builder.ToString();
+        var words = PrimeFactors(number)
+                        .Where(n => rain.ContainsKey(n))
+                        .Distinct()
+                        .Select(i => rain[i])
+                        .ToArray();
+        return words.Any() ? String.Concat(words) : number.ToString();
     }
 
-    private static IEnumerable<long> PrimeFactors(long i)
+    private static IEnumerable<int> PrimeFactors(long i)
     {
         int factor = 2;
         while(i > 1)
