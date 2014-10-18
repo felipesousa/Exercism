@@ -51,6 +51,7 @@
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
+    <Compile Include="clock\Clock.cs" />
     <Compile Include="clock\ClockTest.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
