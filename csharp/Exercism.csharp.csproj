@@ -67,7 +67,11 @@
     <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
+    <Compile Include="prime-factors\PrimeFactors.cs" />
+    <Compile Include="prime-factors\PrimeFactorsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="raindrops\Raindrops.cs" />
+    <Compile Include="raindrops\RaindropsTest.cs" />
     <Compile Include="robot-name\Robot.cs" />
     <Compile Include="robot-name\RobotNameTest.cs" />
     <Compile Include="roman-numerals\RomanNumerals.cs" />
@@ -98,6 +102,8 @@
     <None Include="nucleotide-count\README.md" />
     <None Include="packages.config" />
     <None Include="phone-number\README.md" />
+    <None Include="prime-factors\README.md" />
+    <None Include="raindrops\README.md" />
     <None Include="robot-name\README.md" />
     <None Include="roman-numerals\README.md" />
     <None Include="scrabble-score\README.md" />
