@@ -12,7 +12,7 @@ is_silence = function (conversation) {
 };
 
 is_yelling = function (conversation) {
-  return conversation.toUpperCase() === conversation && /[A-Z]/.test(conversation);
+  return conversation.toUpperCase() === conversation && conversation.match(/[A-Z]/);
 };
 
 is_question = function (conversation) {
