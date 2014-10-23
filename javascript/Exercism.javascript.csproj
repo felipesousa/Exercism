@@ -59,14 +59,8 @@
   <ItemGroup>
     <Content Include="bob\bob.js" />
     <Content Include="bob\bob_test.spec.js" />
-    <Content Include="css\jasmine.css" />
-    <Content Include="Scripts\jasmine-html.js" />
-    <Content Include="Scripts\jasmine.js" />
-    <Content Include="Scripts\r.js" />
-    <Content Include="Scripts\require.js" />
     <Content Include="test.bat" />
     <Content Include="bob\README.md" />
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
