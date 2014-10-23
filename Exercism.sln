@@ -20,6 +20,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Exercism.python", "python\E
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercism.cpp", "cpp\Exercism.cpp.vcxproj", "{21FA5FBF-7C7D-4F21-B9CF-4BF918BEBD5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercism.javascript", "javascript\Exercism.javascript.csproj", "{E312906C-B57F-4D93-9A55-540D2D0ABBB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,16 @@ Global
 		{21FA5FBF-7C7D-4F21-B9CF-4BF918BEBD5B}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{21FA5FBF-7C7D-4F21-B9CF-4BF918BEBD5B}.Release|Win32.ActiveCfg = Release|Win32
 		{21FA5FBF-7C7D-4F21-B9CF-4BF918BEBD5B}.Release|Win32.Build.0 = Release|Win32
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E312906C-B57F-4D93-9A55-540D2D0ABBB2}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
