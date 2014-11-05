@@ -32,7 +32,10 @@ public class Allergies
 
     public IList<string> List()
     {
-        return Enum.GetValues(typeof(Allergen)).Cast<Allergen>().Where(AllergicTo).Select(a => a.ToString()).ToList();
+        return Enum.GetValues(typeof(Allergen))
+                   .Cast<Allergen>()
+                   .Where(AllergicTo)
+                   .Select(a => a.ToString()).ToList();
     }
 
     private bool AllergicTo(Allergen allergen)
