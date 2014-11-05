@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="allergies\Allergies.cs" />
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
     <Compile Include="anagram\AnagramTest.cs" />
