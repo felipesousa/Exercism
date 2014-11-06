@@ -5,7 +5,7 @@ using System;
 
 public static class Strain
 {
-    public static IEnumerable<T> Keep<T>( this IEnumerable<T> collection, Func<T, bool> keep )
+    public static IEnumerable<T> Keep<T>( this IEnumerable<T> collection, Predicate<T> keep )
     {
         foreach ( var item in collection )
         {
@@ -14,7 +14,7 @@ public static class Strain
         }
     }
 
-    public static IEnumerable<T> Discard<T>( this IEnumerable<T> collection, Func<T, bool> discard )
+    public static IEnumerable<T> Discard<T>( this IEnumerable<T> collection, Predicate<T> discard )
     {
         foreach ( var item in collection )
         {
