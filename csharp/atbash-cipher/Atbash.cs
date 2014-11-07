@@ -21,7 +21,7 @@ public static class Atbash
 
     private static string StripWhitespace( string words )
     {
-        return regex.Replace( words, "" );
+        return regex.Replace( words.ToLower(), "" );
     }
 
     private static char Encode( char c )
@@ -29,6 +29,6 @@ public static class Atbash
         if ( Char.IsDigit( c ) )
             return c;
 
-        return (char)( 'z' - Char.ToLower( c ) + 'a' );
+        return (char)( 'z' - c + 'a' );
     }
 }
