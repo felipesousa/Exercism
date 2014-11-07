@@ -49,6 +49,8 @@
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
     <Compile Include="anagram\AnagramTest.cs" />
+    <Compile Include="atbash-cipher\Atbash.cs" />
+    <Compile Include="atbash-cipher\AtbashTest.cs" />
     <Compile Include="binary\Binary.cs" />
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
@@ -96,6 +98,7 @@
   <ItemGroup>
     <None Include="allergies\README.md" />
     <None Include="anagram\README.md" />
+    <None Include="atbash-cipher\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
     <None Include="etl\README.md" />
