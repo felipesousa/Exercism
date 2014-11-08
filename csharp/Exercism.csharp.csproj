@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accumulate\Accumulate.cs" />
+    <Compile Include="accumulate\AccumulateTest.cs" />
     <Compile Include="allergies\Allergies.cs" />
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="word-count\WordCountTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="accumulate\README.md" />
     <None Include="allergies\README.md" />
     <None Include="anagram\README.md" />
     <None Include="atbash-cipher\README.md" />
