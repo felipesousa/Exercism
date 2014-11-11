@@ -7,9 +7,7 @@ var anagram = function (word) {
 
   var isAnagram = function (test) {
     test = test.toLowerCase();
-    return test.length == word.length &&
-      lower !== test &&
-      sorted === sortLetters(test);
+    return lower !== test && sorted === sortLetters(test);
   }
 
   var lower = word.toLowerCase();
@@ -17,15 +15,18 @@ var anagram = function (word) {
 
   return {
     matches: function (words) {
+      var anagrams = [];
+
       if (arguments.length > 1) {
         words = arguments;
       }
-      var anagrams = [];
+
       for (var i = 0; i < words.length; i++) {
         if (isAnagram(words[i])) {
           anagrams.push(words[i]);
         }
       }
+
       return anagrams;
     }
   }
