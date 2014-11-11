@@ -30,12 +30,12 @@ public class Allergies
         return List().Any(a => a.Equals(item, StringComparison.CurrentCultureIgnoreCase));
     }
 
-    public IList<string> List()
+    public IEnumerable<string> List()
     {
         return Enum.GetValues(typeof(Allergen))
                    .Cast<Allergen>()
                    .Where(AllergicTo)
-                   .Select(a => a.ToString()).ToList();
+                   .Select(a => a.ToString());
     }
 
     private bool AllergicTo(Allergen allergen)
