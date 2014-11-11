@@ -59,10 +59,13 @@
   <ItemGroup>
     <Content Include="bob\bob.js" />
     <Content Include="bob\bob_test.spec.js" />
+    <Content Include="hamming\hamming.js" />
+    <Content Include="hamming\hamming_test.spec.js" />
     <Content Include="test.bat" />
     <Content Include="bob\README.md" />
     <Content Include="word-count\word-count.js" />
     <Content Include="word-count\word-count_test.spec.js" />
+    <Content Include="hamming\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
