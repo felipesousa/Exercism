@@ -62,7 +62,7 @@ public class Crypto
     public string NormalizeCiphertext()
     {
         string cipher = Ciphertext();
-        int size = cipher.Length == Size * Size ? Size : Size - 1;
+        int size = cipher.Length > Size * Size - Size ? Size : Size - 1;
         return string.Join( " ", SegmentText( cipher, size ) );
     }
 }

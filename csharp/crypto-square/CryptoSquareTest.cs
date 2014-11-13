@@ -121,4 +121,12 @@ public class CryptoSquareTest
         var crypto = new Crypto( "Have a nice day. Feed the dog & chill out!" );
         Assert.That( crypto.NormalizeCiphertext(), Is.EqualTo( "hifei acedl veeol eddgo aatcu nyhht" ) );
     }
+
+    [Ignore]
+    [Test]
+    public void Normalized_ciphertext_is_split_into_segements_of_correct_size_when_just_less_than_full_square()
+    {
+        var crypto = new Crypto( "I am" );
+        Assert.That( crypto.NormalizeCiphertext(), Is.EqualTo( "im a" ) );
+    }
 }
