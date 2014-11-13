@@ -1,58 +1,68 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 public class Crypto
 {
-    public Crypto( string plaintext )
-    {
-        NormalizePlaintext = Normalize( plaintext );
-        Size = GetSegmentSize(NormalizePlaintext);
-    }
-
     public string NormalizePlaintext { get; private set; }
     public int Size { get; private set; }
 
-    public IEnumerable<string> PlaintextSegments()
+    public Crypto( string value )
     {
-        return SplitIntoSegments( NormalizePlaintext, Size );
+        NormalizePlaintext = NormalizeText( value );
+        Size = GetSquareSize( NormalizePlaintext );
+    }
+
+    private static string NormalizeText( string text )
+    {
+        return string.Concat( text.ToLower().Where( char.IsLetterOrDigit ) );
+    }
+
+    private static int GetSquareSize( string text )
+    {
+        return (int)Math.Ceiling( Math.Sqrt( text.Length ) );
+    }
+
+    public string[] PlaintextSegments()
+    {
+        return SegmentText( NormalizePlaintext, Size );
+    }
+
+    private static string[] SegmentText( string text, int size )
+    {
+        var segments = new List<string>();
+        var idx = 0;
+        while ( idx < text.Length )
+        {
+            if ( idx + size < text.Length )
+                segments.Add( text.Substring( idx, size ) );
+            else
+                segments.Add( text.Substring( idx ) );
+            idx += size;
+        }
+        return segments.ToArray();
     }
 
     public string Ciphertext()
     {
-        var builder = new StringBuilder( NormalizePlaintext.Length );
-        for ( int offset = 0; offset < Size; offset++ )
+        var ciphertext = new StringBuilder( NormalizePlaintext.Length );
+
+        for ( int i = 0; i < Size; i++ )
         {
-            for ( int i = 0; i + offset < NormalizePlaintext.Length; i += Size )
+            foreach ( var segment in PlaintextSegments() )
             {
-                builder.Append( NormalizePlaintext[i + offset] );
+                if ( i < segment.Length )
+                    ciphertext.Append( segment[i] );
             }
         }
-        return builder.ToString();
+        return ciphertext.ToString();
     }
 
     public string NormalizeCiphertext()
     {
-        return string.Join( " ", SplitIntoSegments( Ciphertext(), 5 ) );
-    }
-
-    private static string Normalize( string text )
-    {
-        return Regex.Replace( text, @"[^\w]", "" ).ToLower();
-    }
-
-    private static int GetSegmentSize( string text )
-    {
-        return ( int )Math.Ceiling( Math.Sqrt( text.Length ) );
-    }
-
-    private IEnumerable<string> SplitIntoSegments( string text, int size )
-    {
-        for ( int i = 0; i < text.Length; i += size )
-        {
-            int len = Math.Min( size, text.Length - i );
-            yield return text.Substring( i, len );
-        }
+        string cipher = Ciphertext();
+        int size = cipher.Length == Size * Size ? Size : Size - 1;
+        return string.Join( " ", SegmentText( cipher, size ) );
     }
 }
