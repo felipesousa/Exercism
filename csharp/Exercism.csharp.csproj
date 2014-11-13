@@ -57,6 +57,8 @@
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
+    <Compile Include="crypto-square\Crypto.cs" />
+    <Compile Include="crypto-square\CryptoSquareTest.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
     <Compile Include="gigasecond\GigaSecond.cs" />
@@ -104,6 +106,7 @@
     <None Include="atbash-cipher\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
+    <None Include="crypto-square\README.md" />
     <None Include="etl\README.md" />
     <None Include="gigasecond\README.md" />
     <None Include="grade-school\README.md" />
