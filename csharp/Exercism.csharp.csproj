@@ -94,6 +94,8 @@
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />
     <Compile Include="triangle\Triangle.cs" />
     <Compile Include="triangle\TriangleTest.cs" />
+    <Compile Include="trinary\Trinary.cs" />
+    <Compile Include="trinary\TrinaryTest.cs" />
     <Compile Include="twelve-days\TwelveDaysSong.cs" />
     <Compile Include="twelve-days\TwelveDaysTest.cs" />
     <Compile Include="word-count\Phrase.cs" />
@@ -125,6 +127,7 @@
     <None Include="strain\README.md" />
     <None Include="sum-of-multiples\README.md" />
     <None Include="triangle\README.md" />
+    <None Include="trinary\README.md" />
     <None Include="twelve-days\README.md" />
     <None Include="word-count\README.md" />
   </ItemGroup>
