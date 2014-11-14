@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -9,21 +8,10 @@ public class Trinary
 
     public Trinary(string value)
     {
-        _value = value;
+        _value = IsValid(value) ? value : "0";
     }
 
     public int ToDecimal()
-    {
-        if(IsInvalid()) return 0;
-        return Parse();
-    }
-
-    private bool IsInvalid()
-    {
-        return Regex.Match(_value, "[^0-2]").Success;
-    }
-
-    private int Parse()
     {
         return _value.Reverse()
                      .Select(IntegerValue)
@@ -40,12 +28,10 @@ public class Trinary
     {
         return digit * (int)Math.Pow(3, place);
     }
-}
 
-//public static class StringExtensions
-//{
-//    public static string Reverse( this string text )
-//    {
-//        return new string(((IEnumerable<char>)text).Reverse().ToArray());
-//    }
-//}
+    private static bool IsValid(string trinary)
+    {
+        return !string.IsNullOrWhiteSpace( trinary ) &&
+            !Regex.Match(trinary, "[^0-2]").Success;
+    }
+}
