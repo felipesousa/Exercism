@@ -1,30 +1,30 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 public class Complement
 {
-    private const char ADENINE   = 'A';
-    private const char CYTOSINE  = 'C';
-    private const char GUANINE   = 'G';
-    private const char THYMIDINE = 'T';
-    private const char URACIL    = 'U';
-
     private static readonly Dictionary<char, char> _complements = new Dictionary<char, char>
     {
-        {GUANINE, CYTOSINE},
-        {CYTOSINE, GUANINE},
-        {THYMIDINE, ADENINE},
-        {ADENINE, URACIL}
+        {'G', 'C'},
+        {'C', 'G'},
+        {'T', 'A'},
+        {'A', 'U'}
     };
 
     public static string OfDna(string dna)
     {
-        return new string( dna.Select(RnaComplement).ToArray() );
+        return GetComplement(dna, RnaComplement);
     }
 
     public static string OfRna(string rna)
     {
-        return new string(rna.Select(DnaComplement).ToArray());
+        return GetComplement(rna, DnaComplement);
+    }
+
+    private static string GetComplement(string sequence, Func<char, char> complement)
+    {
+        return new string(sequence.Select(complement).ToArray());
     }
 
     private static char RnaComplement(char dna)
@@ -34,6 +34,8 @@ public class Complement
 
     private static char DnaComplement(char rna)
     {
-        return (from pair in _complements where pair.Value == rna select pair.Key).FirstOrDefault();
+        return (from pair in _complements 
+                where pair.Value == rna 
+                select pair.Key).FirstOrDefault();
     }
 }
