@@ -158,6 +158,7 @@
         <PropertyValue name="AutomaticOutliningOfStatementBlocks">false</PropertyValue>
         <PropertyValue name="ColorizeInactiveBlocksDifferently">true</PropertyValue>
         <PropertyValue name="DisableAggressiveMemberList">false</PropertyValue>
+        <PropertyValue name="DisableBrowsingUpToDateCheck">true</PropertyValue>
         <PropertyValue name="DisableDatabase">false</PropertyValue>
         <PropertyValue name="DisableDatabaseAutoUpdates">false</PropertyValue>
         <PropertyValue name="DisableDatabaseImplicitAutoCleanup">false</PropertyValue>
@@ -188,6 +189,7 @@
         <PropertyValue name="IndentAccessSpecifiers">false</PropertyValue>
         <PropertyValue name="IndentBlockContents">true</PropertyValue>
         <PropertyValue name="IndentBraces">false</PropertyValue>
+        <PropertyValue name="IndentCaseBraces">false</PropertyValue>
         <PropertyValue name="IndentCaseContents">true</PropertyValue>
         <PropertyValue name="IndentCaseLabels">false</PropertyValue>
         <PropertyValue name="IndentGotoLabels">1</PropertyValue>
