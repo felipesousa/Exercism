@@ -34,7 +34,9 @@ public class Crypto
 
     public string NormalizeCiphertext()
     {
-        return string.Join( " ", SplitIntoSegments( Ciphertext(), 5 ) );
+        string cipher = Ciphertext();
+        int size = cipher.Length > Size * Size - Size ? Size : Size - 1;
+        return string.Join( " ", SplitIntoSegments( cipher, size ) );
     }
 
     private static string Normalize( string text )

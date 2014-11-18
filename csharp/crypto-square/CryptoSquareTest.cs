@@ -81,10 +81,10 @@ public class CryptoSquareTest
     }
 
     [Test]
-    public void Normalized_ciphertext_is_split_by_5()
+    public void Normalized_ciphertext_is_split_by_height_of_square()
     {
         var crypto = new Crypto("Vampires are people too!");
-        Assert.That(crypto.NormalizeCiphertext(), Is.EqualTo("vrela epems etpao oirpo"));
+        Assert.That(crypto.NormalizeCiphertext(), Is.EqualTo("vrel aepe mset paoo irpo"));
     }
 
     [Test]
@@ -92,5 +92,19 @@ public class CryptoSquareTest
     {
         var crypto = new Crypto("Madness, and then illumination.");
         Assert.That(crypto.NormalizeCiphertext(), Is.EqualTo("msemo aanin dninn dlaet ltshu i"));
+    }
+
+    [Test]
+    public void Normalized_ciphertext_is_split_into_segements_of_correct_size()
+    {
+        var crypto = new Crypto("If man was meant to stay on the ground god would have given us roots");
+        Assert.That(crypto.NormalizeCiphertext(), Is.EqualTo("imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau"));
+    }
+
+    [Test]
+    public void Normalized_ciphertext_is_split_into_segements_of_correct_size_with_punctuation()
+    {
+        var crypto = new Crypto("Have a nice day. Feed the dog & chill out!");
+        Assert.That(crypto.NormalizeCiphertext(), Is.EqualTo("hifei acedl veeol eddgo aatcu nyhht"));
     }
 }
