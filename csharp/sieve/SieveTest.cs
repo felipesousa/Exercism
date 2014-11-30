@@ -9,14 +9,12 @@ public class SieveTest
         Assert.That(new Sieve(2).Primes, Is.EqualTo(new[] { 2 }));
     }
 
-    [Ignore]
     [Test]
     public void Finds_primes_up_to_10()
     {
         Assert.That(new Sieve(10).Primes, Is.EqualTo(new[] { 2, 3, 5, 7 }));
     }
 
-    [Ignore]
     [Test]
     public void Finds_primes_up_to_1000()
     {
