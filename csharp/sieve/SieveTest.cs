@@ -4,9 +4,33 @@ using NUnit.Framework;
 public class SieveTest
 {
     [Test]
+    public void Works_with_zero()
+    {
+        Assert.That( new Sieve( 0 ).Primes, Is.EqualTo( new int[] { } ) );
+    }
+
+    [Test]
+    public void Works_with_one()
+    {
+        Assert.That( new Sieve( 1 ).Primes, Is.EqualTo( new int[] { } ) );
+    }
+
+    [Test]
     public void Finds_first_prime()
     {
         Assert.That(new Sieve(2).Primes, Is.EqualTo(new[] { 2 }));
+    }
+
+    [Test]
+    public void Finds_primes_up_to_4()
+    {
+        Assert.That(new Sieve(4).Primes, Is.EqualTo(new[] { 2, 3 }));
+    }
+
+    [Test]
+    public void Finds_primes_up_to_5()
+    {
+        Assert.That( new Sieve( 5 ).Primes, Is.EqualTo( new[] { 2, 3, 5 } ) );
     }
 
     [Test]

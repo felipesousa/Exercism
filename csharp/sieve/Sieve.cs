@@ -3,13 +3,15 @@ using System.Linq;
 
 public class Sieve
 {
-    // Once processes, false is prime, true is not prime
+    // Once processed, false is prime, true is not prime
     private readonly bool[] _numbers;
 
     public Sieve(int max)
     {
+        if (max < 0) max = 0;
         _numbers = new bool[max+1];
         _numbers[0] = true;
+        if (max == 0) return;
         _numbers[1] = true;
         int lastPrime = 2;
         while (lastPrime < max)
@@ -21,9 +23,8 @@ public class Sieve
 
     private void MarkNonPrimes(int multiple)
     {
-        int max = _numbers.Length;
         int current = multiple*2;
-        while (current < max)
+        while (current < _numbers.Length)
         {
             _numbers[current] = true;
             current += multiple;
