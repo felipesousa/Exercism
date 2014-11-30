@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 
 public class Sieve
 {
@@ -13,6 +12,11 @@ public class Sieve
         _numbers[0] = true;
         if (max == 0) return;
         _numbers[1] = true;
+        CalculatePrimes(max);
+    }
+
+    private void CalculatePrimes(int max)
+    {
         int lastPrime = 2;
         while (lastPrime < max)
         {
