@@ -1,5 +1,29 @@
 using NUnit.Framework;
 
+public class Cipher
+{
+    public Cipher()
+    {
+    }
+
+    public Cipher(string key)
+    {
+        Key = key;
+    }
+
+    public string Key { get; set; }
+
+    public string Encode(string plaintext)
+    {
+        return plaintext;
+    }
+
+    public string Decode(string ciphertext)
+    {
+        return ciphertext;
+    }
+}
+
 [TestFixture]
 public class RandomKeyCipherTest
 {
