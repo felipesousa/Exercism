@@ -1,29 +1,5 @@
 using NUnit.Framework;
 
-public class Cipher
-{
-    public Cipher()
-    {
-    }
-
-    public Cipher(string key)
-    {
-        Key = key;
-    }
-
-    public string Key { get; set; }
-
-    public string Encode(string plaintext)
-    {
-        return plaintext;
-    }
-
-    public string Decode(string ciphertext)
-    {
-        return ciphertext;
-    }
-}
-
 [TestFixture]
 public class RandomKeyCipherTest
 {
@@ -41,14 +17,12 @@ public class RandomKeyCipherTest
         Assert.That(cipher.Key, Is.StringMatching("[a-z]+"));
     }
 
-    [Ignore]
     [Test]
     public void Default_cipher_key_is_100_characters()
     {
         Assert.That(cipher.Key, Has.Length.EqualTo(100));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_keys_are_randomly_generated()
     {
@@ -58,7 +32,6 @@ public class RandomKeyCipherTest
     // Here we take advantage of the fact that plaintext of "aaa..." doesn't output
     // the key. This is a critical problem with shift ciphers, some characters
     // will always output the key verbatim.
-    [Ignore]
     [Test]
     public void Cipher_can_encode()
     {
