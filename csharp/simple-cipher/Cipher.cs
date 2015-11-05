@@ -23,17 +23,37 @@ public class Cipher
 
     public string Encode(string plaintext)
     {
-        return plaintext;
+        var ciphertext = new StringBuilder(plaintext.Length);
+        for(int i = 0; i < plaintext.Length; i++)
+        {
+            char p = plaintext[i];
+            char k = SubtractChar(Key[i], 'a');
+            char c = AddChar(p, k);
+            ciphertext.Append(c);
+        }
+        return ciphertext.ToString();
     }
 
     public string Decode(string ciphertext)
     {
-        return ciphertext;
+        var plaintext = new StringBuilder(ciphertext.Length);
+        for(int i = 0; i < ciphertext.Length; i++)
+        {
+            char c = ciphertext[i];
+            char k = SubtractChar(Key[i], 'a');
+            char p = SubtractChar(c, k);
+            plaintext.Append(p);
+        }
+        return plaintext.ToString();
     }
 
     IEnumerable<char> RandomKeys()
     {
         while(true)
-            yield return (char)('a' + _random.Next(26));
+            yield return AddChar('a', (char)_random.Next(26));
     }
+
+    char SubtractChar(char a, char b) => (char)(a - b);
+
+    char AddChar(char a, char b) => (char)(a + b);
 }

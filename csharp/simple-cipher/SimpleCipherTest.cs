@@ -38,14 +38,12 @@ public class RandomKeyCipherTest
         Assert.That(cipher.Encode("aaaaaaaaaa"), Is.EqualTo(cipher.Key.Substring(0, 10)));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_decode()
     {
         Assert.That(cipher.Decode(cipher.Key.Substring(0, 10)), Is.EqualTo("aaaaaaaaaa"));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_is_reversible()
     {
