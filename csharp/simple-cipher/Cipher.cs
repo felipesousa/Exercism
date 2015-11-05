@@ -11,13 +11,7 @@ public class Cipher
 
     public Cipher() : this("d")
     {
-        var keyBuilder = new StringBuilder();
-        for(int i = 0; i < 100; i++)
-        {
-            char k = (char)('a' + _random.Next(26));
-            keyBuilder.Append(k);
-        }
-        Key = keyBuilder.ToString();
+        Key = new string(RandomKeys().Take(100).ToArray());
     }
 
     public Cipher(string key)
@@ -35,5 +29,11 @@ public class Cipher
     public string Decode(string ciphertext)
     {
         return ciphertext;
+    }
+
+    IEnumerable<char> RandomKeys()
+    {
+        while(true)
+            yield return (char)('a' + _random.Next(26));
     }
 }
