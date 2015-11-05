@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -9,13 +10,13 @@ public class Cipher
 {
     static Random _random = new Random();
 
-    public Cipher() : this("d")
+    public Cipher() : this(new string(RandomKeys().Take(100).ToArray()))
     {
-        Key = new string(RandomKeys().Take(100).ToArray());
     }
 
     public Cipher(string key)
     {
+        CheckKey(key);
         Key = key;
     }
 
@@ -38,13 +39,19 @@ public class Cipher
         return transformed.ToString();
     }
 
-    IEnumerable<char> RandomKeys()
+    void CheckKey(string key)
+    {
+        if(Regex.Match(key, "[^a-z]+").Success)
+            throw new ArgumentException("Key must only contain lowercase letters");
+    }
+
+    static IEnumerable<char> RandomKeys()
     {
         while(true)
             yield return AddChar('a', (char)_random.Next(26));
     }
 
-    char SubtractChar(char a, char b) => (char)(a - b);
+    static char SubtractChar(char a, char b) => (char)(a - b);
 
-    char AddChar(char a, char b) => (char)(a + b);
+    static char AddChar(char a, char b) => (char)(a + b);
 }

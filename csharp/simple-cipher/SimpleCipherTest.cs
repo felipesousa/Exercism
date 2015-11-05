@@ -55,35 +55,30 @@ public class RandomKeyCipherTest
 [TestFixture]
 public class IncorrectKeyCipherTest
 {
-    [Ignore]
     [Test]
     public void Cipher_throws_with_an_all_caps_key()
     {
         Assert.That(() => new Cipher("ABCDEF"), Throws.ArgumentException);
     }
 
-    [Ignore]
     [Test]
     public void Cipher_throws_with_any_caps_key()
     {
         Assert.That(() => new Cipher("abcdEFg"), Throws.ArgumentException);
     }
 
-    [Ignore]
     [Test]
     public void Cipher_throws_with_numeric_key()
     {
         Assert.That(() => new Cipher("12345"), Throws.ArgumentException);
     }
 
-    [Ignore]
     [Test]
     public void Cipher_throws_with_any_numeric_key()
     {
         Assert.That(() => new Cipher("abcd345ef"), Throws.ArgumentException);
     }
 
-    [Ignore]
     [Test]
     public void Cipher_throws_with_empty_key()
     {
