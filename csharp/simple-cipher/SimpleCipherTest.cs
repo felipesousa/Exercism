@@ -92,35 +92,30 @@ public class SubstitutionCipherTest
     private const string KEY = "abcdefghij";
     private Cipher cipher;
 
-    [Ignore]
     [SetUp]
     public void Setup()
     {
         cipher = new Cipher(KEY);
     }
 
-    [Ignore]
     [Test]
     public void Cipher_keeps_the_submitted_key()
     {
         Assert.That(cipher.Key, Is.EqualTo(KEY));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_encode_with_given_key()
     {
         Assert.That(cipher.Encode("aaaaaaaaaa"), Is.EqualTo("abcdefghij"));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_decode_with_given_key()
     {
         Assert.That(cipher.Decode("abcdefghij"), Is.EqualTo("aaaaaaaaaa"));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_is_reversible_given_key()
     {
@@ -128,7 +123,6 @@ public class SubstitutionCipherTest
         Assert.That(cipher.Decode(cipher.Encode(PLAINTEXT)), Is.EqualTo(PLAINTEXT));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_double_shift_encode()
     {
@@ -136,21 +130,18 @@ public class SubstitutionCipherTest
         Assert.That(new Cipher(PLAINTEXT).Encode(PLAINTEXT), Is.EqualTo("qayaeaagaciai"));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_wrap_encode()
     {
         Assert.That(cipher.Encode("zzzzzzzzzz"), Is.EqualTo("zabcdefghi"));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_encode_a_message_that_is_shorter_than_the_key()
     {
         Assert.That(cipher.Encode("aaaaa"), Is.EqualTo("abcde"));
     }
 
-    [Ignore]
     [Test]
     public void Cipher_can_decode_a_message_that_is_shorter_than_the_key()
     {
