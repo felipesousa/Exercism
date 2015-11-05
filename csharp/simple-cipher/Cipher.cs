@@ -43,6 +43,9 @@ public class Cipher
     {
         if(Regex.Match(key, "[^a-z]+").Success)
             throw new ArgumentException("Key must only contain lowercase letters");
+
+        if(key.Length == 0)
+            throw new ArgumentException("Key must contain values");
     }
 
     static IEnumerable<char> RandomKeys()
