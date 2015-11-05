@@ -27,7 +27,7 @@ public class Cipher
         for(int i = 0; i < plaintext.Length; i++)
         {
             char p = plaintext[i];
-            char k = SubtractChar(Key[i], 'a');
+            char k = SubtractChar(Key[i%Key.Length], 'a');
             char c = AddChar(p, k);
             ciphertext.Append(c);
         }
@@ -40,7 +40,7 @@ public class Cipher
         for(int i = 0; i < ciphertext.Length; i++)
         {
             char c = ciphertext[i];
-            char k = SubtractChar(Key[i], 'a');
+            char k = SubtractChar(Key[i%Key.Length], 'a');
             char p = SubtractChar(c, k);
             plaintext.Append(p);
         }
