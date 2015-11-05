@@ -21,30 +21,21 @@ public class Cipher
 
     public string Key { get; set; }
 
-    public string Encode(string plaintext)
-    {
-        var ciphertext = new StringBuilder(plaintext.Length);
-        for(int i = 0; i < plaintext.Length; i++)
-        {
-            char p = plaintext[i];
-            char k = SubtractChar(Key[i%Key.Length], 'a');
-            char c = AddChar(p, k);
-            ciphertext.Append(c);
-        }
-        return ciphertext.ToString();
-    }
+    public string Encode(string plaintext) => Transform(plaintext, AddChar);
 
-    public string Decode(string ciphertext)
+    public string Decode(string ciphertext) => Transform(ciphertext, SubtractChar);
+
+    string Transform(string initial, Func<char, char, char> func)
     {
-        var plaintext = new StringBuilder(ciphertext.Length);
-        for(int i = 0; i < ciphertext.Length; i++)
+        var transformed = new StringBuilder(initial.Length);
+        for(int i = 0; i < initial.Length; i++)
         {
-            char c = ciphertext[i];
-            char k = SubtractChar(Key[i%Key.Length], 'a');
-            char p = SubtractChar(c, k);
-            plaintext.Append(p);
+            char c = initial[i];
+            char k = SubtractChar(Key[i % Key.Length], 'a');
+            char t = func(c, k);
+            transformed.Append(t);
         }
-        return plaintext.ToString();
+        return transformed.ToString();
     }
 
     IEnumerable<char> RandomKeys()
