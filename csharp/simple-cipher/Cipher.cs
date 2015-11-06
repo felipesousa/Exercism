@@ -32,7 +32,7 @@ public class Cipher
         for(int i = 0; i < initial.Length; i++)
         {
             char c = initial[i];
-            char k = SubtractChar(Key[i % Key.Length], 'a');
+            char k = (char)(Key[i % Key.Length] - 'a');
             char t = func(c, k);
             transformed.Append(t);
         }
@@ -51,10 +51,18 @@ public class Cipher
     static IEnumerable<char> RandomKeys()
     {
         while(true)
-            yield return AddChar('a', (char)_random.Next(26));
+            yield return (char)('a' + (char)_random.Next(26));
     }
 
-    static char SubtractChar(char a, char b) => (char)(a - b);
-
-    static char AddChar(char a, char b) => (char)(a + b);
+    static char SubtractChar(char a, char b)
+    {
+        int i = a - b - 'a';
+        if(i < 0) i += 26;
+        return (char)(i + 'a');
+    }
+    static char AddChar(char a, char b)
+    {
+        int i = a + b - 'a';
+        return (char)(i % 26 + 'a');
+    }
 }
