@@ -73,6 +73,7 @@
     <Compile Include="meetup\MeetupTest.cs" />
     <Compile Include="nucleotide-count\DNA.cs" />
     <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
+    <Compile Include="octal\OctalTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
     <Compile Include="prime-factors\PrimeFactors.cs" />
@@ -121,6 +122,7 @@
     <None Include="leap\README.md" />
     <None Include="meetup\README.md" />
     <None Include="nucleotide-count\README.md" />
+    <None Include="octal\README.md" />
     <None Include="packages.config" />
     <None Include="phone-number\README.md" />
     <None Include="prime-factors\README.md" />

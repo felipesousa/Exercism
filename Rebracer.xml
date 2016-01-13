@@ -16,6 +16,7 @@
         <PropertyValue name="BringUpOnOverride">1</PropertyValue>
         <PropertyValue name="BringUpOnPartial">1</PropertyValue>
         <PropertyValue name="BringUpOnSpace">1</PropertyValue>
+        <PropertyValue name="ClosedFileDiagnostics">1</PropertyValue>
         <PropertyValue name="CodeDefinitionWindow_DocumentationComment_IndentBase">1</PropertyValue>
         <PropertyValue name="CodeDefinitionWindow_DocumentationComment_IndentOffset">2</PropertyValue>
         <PropertyValue name="CodeDefinitionWindow_DocumentationComment_WrapLength">80</PropertyValue>
@@ -27,15 +28,19 @@
         <PropertyValue name="CompleteOnSpace">1</PropertyValue>
         <PropertyValue name="CompletionCommitCharacters">{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'"\</PropertyValue>
         <PropertyValue name="DelayBeforeShowingErrors">1500</PropertyValue>
+        <PropertyValue name="DisplayLineSeparators">0</PropertyValue>
         <PropertyValue name="EditAndContinueEnabled">1</PropertyValue>
         <PropertyValue name="EditAndContinueReportEnterBreakStateFailure">1</PropertyValue>
         <PropertyValue name="EditAndContinueReportOpenScopeFailure">0</PropertyValue>
+        <PropertyValue name="EnableHighlightRelatedKeywords">1</PropertyValue>
         <PropertyValue name="EnableProgressDialogOnWaitForBackground">1</PropertyValue>
         <PropertyValue name="EncapsulateField_PreviewReferenceChanges">1</PropertyValue>
         <PropertyValue name="EncapsulateField_SearchInComments">0</PropertyValue>
         <PropertyValue name="EncapsulateField_SearchInStrings">0</PropertyValue>
         <PropertyValue name="EncapsulateField_UpdateAllReferences">0</PropertyValue>
         <PropertyValue name="ExtractInterface_SelectAll">0</PropertyValue>
+        <PropertyValue name="ExtractMethod_AllowMovingDeclaration">0</PropertyValue>
+        <PropertyValue name="ExtractMethod_DoNotPutOutOrRefOnStruct">1</PropertyValue>
         <PropertyValue name="FilterKeywordsContextually">1</PropertyValue>
         <PropertyValue name="FilterToAllowableTypes">1</PropertyValue>
         <PropertyValue name="Formatting_TriggerOnBlockCompletion">1</PropertyValue>
@@ -54,6 +59,7 @@
         <PropertyValue name="Indent_UnindentLabels">1</PropertyValue>
         <PropertyValue name="InsertNewlineOnEnterWithWholeWord">0</PropertyValue>
         <PropertyValue name="NewLines_AnonymousTypeInitializer_EachMember">1</PropertyValue>
+        <PropertyValue name="NewLines_Braces_Accessor">1</PropertyValue>
         <PropertyValue name="NewLines_Braces_AnonymousMethod">1</PropertyValue>
         <PropertyValue name="NewLines_Braces_AnonymousTypeInitializer">1</PropertyValue>
         <PropertyValue name="NewLines_Braces_ArrayInitializer">0</PropertyValue>
@@ -62,6 +68,7 @@
         <PropertyValue name="NewLines_Braces_LambdaExpressionBody">1</PropertyValue>
         <PropertyValue name="NewLines_Braces_Method">1</PropertyValue>
         <PropertyValue name="NewLines_Braces_ObjectInitializer">1</PropertyValue>
+        <PropertyValue name="NewLines_Braces_Property">1</PropertyValue>
         <PropertyValue name="NewLines_Braces_Type">1</PropertyValue>
         <PropertyValue name="NewLines_Keywords_Catch">1</PropertyValue>
         <PropertyValue name="NewLines_Keywords_Else">1</PropertyValue>
@@ -75,6 +82,7 @@
         <PropertyValue name="RemoveParameters_PreviewReferenceChanges">1</PropertyValue>
         <PropertyValue name="RemoveUnusedUsings">1</PropertyValue>
         <PropertyValue name="RenameSmartTagEnabled">1</PropertyValue>
+        <PropertyValue name="RenameTrackingPreview">1</PropertyValue>
         <PropertyValue name="Rename_Comments">0</PropertyValue>
         <PropertyValue name="Rename_Overloads">0</PropertyValue>
         <PropertyValue name="Rename_Strings">0</PropertyValue>
@@ -113,6 +121,10 @@
         <PropertyValue name="Space_WithinSquares">0</PropertyValue>
         <PropertyValue name="Squiggles">0</PropertyValue>
         <PropertyValue name="Squiggles_SemanticAnalysis">0</PropertyValue>
+        <PropertyValue name="Style_PreferIntrinsicPredefinedTypeKeywordInDeclaration">1</PropertyValue>
+        <PropertyValue name="Style_PreferIntrinsicPredefinedTypeKeywordInMemberAccess">1</PropertyValue>
+        <PropertyValue name="Style_QualifyMemberAccessWithThisOrMe">0</PropertyValue>
+        <PropertyValue name="Style_UseVarWhenDeclaringLocals">1</PropertyValue>
         <PropertyValue name="TrackMostRecentlyUsed">1</PropertyValue>
         <PropertyValue name="UnboundItemSmartTagEnabled">1</PropertyValue>
         <PropertyValue name="UnboundItem_ExactMatches">5</PropertyValue>
@@ -141,6 +153,7 @@
         <PropertyValue name="InsertSpaceBeforeAndAfterBinaryOperators">true</PropertyValue>
         <PropertyValue name="PlaceOpenBraceOnNewLineForControlBlocks">false</PropertyValue>
         <PropertyValue name="PlaceOpenBraceOnNewLineForFunctions">false</PropertyValue>
+        <PropertyValue name="PlaceOpenBraceOnNewLineForFunctionsAndClasses">false</PropertyValue>
         <PropertyValue name="ShowErrorsAsWarnings">true</PropertyValue>
         <PropertyValue name="ShowSyntaxErrors">true</PropertyValue>
       </ToolsOptionsSubCategory>
@@ -151,6 +164,7 @@
         <PropertyValue name="AutoFormatOnBraceCompletion">true</PropertyValue>
         <PropertyValue name="AutoFormatOnClosingBrace">true</PropertyValue>
         <PropertyValue name="AutoFormatOnPaste">true</PropertyValue>
+        <PropertyValue name="AutoFormatOnPaste2">1</PropertyValue>
         <PropertyValue name="AutoFormatOnSemicolon">true</PropertyValue>
         <PropertyValue name="AutoIndentOnTab">false</PropertyValue>
         <PropertyValue name="AutoTuneMaximumCachedTranslationUnits">true</PropertyValue>
@@ -169,6 +183,7 @@
         <PropertyValue name="DisableInactiveCodeOpacity">false</PropertyValue>
         <PropertyValue name="DisableIncludeAutoComplete">false</PropertyValue>
         <PropertyValue name="DisableIntelliSense">false</PropertyValue>
+        <PropertyValue name="DisableIntelliSenseErrorsInErrorList">true</PropertyValue>
         <PropertyValue name="DisableIntelliSenseUpdating">false</PropertyValue>
         <PropertyValue name="DisableMemberListExpansions">false</PropertyValue>
         <PropertyValue name="DisableMemberListKeywords">false</PropertyValue>
@@ -178,12 +193,20 @@
         <PropertyValue name="DisableSharedIntelliSense">false</PropertyValue>
         <PropertyValue name="DisableSquiggles">false</PropertyValue>
         <PropertyValue name="DoNotWarnIfFallbackLocationUsed">false</PropertyValue>
+        <PropertyValue name="EnableChangeSignature">false</PropertyValue>
+        <PropertyValue name="EnableExpandPrecedence">false</PropertyValue>
+        <PropertyValue name="EnableExpandScopes">false</PropertyValue>
+        <PropertyValue name="EnableExtractFunction">false</PropertyValue>
         <PropertyValue name="EnableLogging">false</PropertyValue>
         <PropertyValue name="EnableQuickInfoToolTips">true</PropertyValue>
+        <PropertyValue name="EnableSQLiteStoreEngine">false</PropertyValue>
+        <PropertyValue name="EnableSingleFileISense">true</PropertyValue>
+        <PropertyValue name="EnableSingleFileISenseSquiggles">false</PropertyValue>
         <PropertyValue name="EnterOutliningModeWhenFilesOpen">true</PropertyValue>
         <PropertyValue name="EnumerateCommentTasks">true</PropertyValue>
         <PropertyValue name="FallbackLocation"></PropertyValue>
         <PropertyValue name="GroupBrackets">true</PropertyValue>
+        <PropertyValue name="HideExperimentalAd">true</PropertyValue>
         <PropertyValue name="HideUnconfirmedReferencesResults">false</PropertyValue>
         <PropertyValue name="HighlightMatchingTokens">true</PropertyValue>
         <PropertyValue name="IndentAccessSpecifiers">false</PropertyValue>
@@ -194,11 +217,14 @@
         <PropertyValue name="IndentCaseLabels">false</PropertyValue>
         <PropertyValue name="IndentGotoLabels">1</PropertyValue>
         <PropertyValue name="IndentNamespaceContents">true</PropertyValue>
+        <PropertyValue name="IndentPreprocessor">2</PropertyValue>
+        <PropertyValue name="IndentationReference">2</PropertyValue>
         <PropertyValue name="LoggingFilter">0</PropertyValue>
         <PropertyValue name="LoggingLevel">5</PropertyValue>
         <PropertyValue name="MaximumCachedTranslationUnits">11</PropertyValue>
         <PropertyValue name="MemberListCommitAggressive">false</PropertyValue>
         <PropertyValue name="MemberListCommitCharacters">{}[]().,:;+-*/%&amp;|^!=&lt;&gt;?@#\</PropertyValue>
+        <PropertyValue name="MemberListDotToArrow">false</PropertyValue>
         <PropertyValue name="MemberListFilterInaccessible">true</PropertyValue>
         <PropertyValue name="MemberListFilterMode">3</PropertyValue>
         <PropertyValue name="NewlineControlBlockBrace">0</PropertyValue>
@@ -211,13 +237,26 @@
         <PropertyValue name="NewlineKeywordWhile">false</PropertyValue>
         <PropertyValue name="NewlineLambdaBrace">0</PropertyValue>
         <PropertyValue name="NewlineNamespaceBrace">0</PropertyValue>
+        <PropertyValue name="NewlineScopeBrace">false</PropertyValue>
         <PropertyValue name="NewlineTypeBrace">0</PropertyValue>
         <PropertyValue name="PreserveBlock">1</PropertyValue>
+        <PropertyValue name="PreserveCommentIndentation">false</PropertyValue>
+        <PropertyValue name="PreserveInitListSpace">true</PropertyValue>
         <PropertyValue name="PreserveParameterIndentation">false</PropertyValue>
         <PropertyValue name="RecreateDatabase">false</PropertyValue>
+        <PropertyValue name="RefactorScope">2</PropertyValue>
         <PropertyValue name="RemoveSpaceBeforeSemicolon">true</PropertyValue>
+        <PropertyValue name="RenameRenameComments">false</PropertyValue>
+        <PropertyValue name="RenameRenameInactive">false</PropertyValue>
+        <PropertyValue name="RenameRenameStrings">false</PropertyValue>
+        <PropertyValue name="RenameRenameUnconfirmed">false</PropertyValue>
+        <PropertyValue name="RenameSearchComments">true</PropertyValue>
+        <PropertyValue name="RenameSearchStrings">true</PropertyValue>
+        <PropertyValue name="RenameShowPreview">false</PropertyValue>
+        <PropertyValue name="RenameSkipPreviewIfConfirmed">false</PropertyValue>
         <PropertyValue name="RescanSolution">false</PropertyValue>
         <PropertyValue name="RescanSolutionInterval">60</PropertyValue>
+        <PropertyValue name="ShowSingleFileISenseErrorsInTaskList">false</PropertyValue>
         <PropertyValue name="SmartMemberListCommitOnEnter">false</PropertyValue>
         <PropertyValue name="SpaceAfterCastParenthesis">false</PropertyValue>
         <PropertyValue name="SpaceAfterComma">true</PropertyValue>
@@ -225,12 +264,14 @@
         <PropertyValue name="SpaceAroundAssignmentOperator">2</PropertyValue>
         <PropertyValue name="SpaceAroundBinaryOperator">2</PropertyValue>
         <PropertyValue name="SpaceAroundConditionalOperator">2</PropertyValue>
+        <PropertyValue name="SpaceBeforeBlockBrace">true</PropertyValue>
         <PropertyValue name="SpaceBeforeBracket">false</PropertyValue>
         <PropertyValue name="SpaceBeforeComma">false</PropertyValue>
         <PropertyValue name="SpaceBeforeConstructorColon">true</PropertyValue>
         <PropertyValue name="SpaceBeforeControlBlockParenthesis">true</PropertyValue>
         <PropertyValue name="SpaceBeforeEmptyBracket">false</PropertyValue>
         <PropertyValue name="SpaceBeforeFunctionParenthesis">false</PropertyValue>
+        <PropertyValue name="SpaceBeforeFunctionParenthesis2">1</PropertyValue>
         <PropertyValue name="SpaceBeforeInheritanceColon">true</PropertyValue>
         <PropertyValue name="SpaceBeforeInitListBrace">false</PropertyValue>
         <PropertyValue name="SpaceBeforeLambdaParenthesis">false</PropertyValue>
@@ -245,12 +286,16 @@
         <PropertyValue name="SpaceWithinFunctionParentheses">true</PropertyValue>
         <PropertyValue name="SpaceWithinInitListBraces">true</PropertyValue>
         <PropertyValue name="SpaceWithinLambdaBrackets">false</PropertyValue>
+        <PropertyValue name="SuspendNewSingleFileISenseDuringDebugging">false</PropertyValue>
         <PropertyValue name="TrimSpaceAroundScope">true</PropertyValue>
         <PropertyValue name="TrimSpaceUnaryOperator">true</PropertyValue>
         <PropertyValue name="UseForwardSlashForIncludeAutoComplete">false</PropertyValue>
       </ToolsOptionsSubCategory>
       <ToolsOptionsSubCategory name="TypeScript Specific">
         <PropertyValue name="AutomaticallyCompileTypeScriptFilesWhenSavedWhenNoSolution">false</PropertyValue>
+        <PropertyValue name="ES3ForFilesThatAreNotPartOfAProject">false</PropertyValue>
+        <PropertyValue name="ES5ForFilesThatAreNotPartOfAProject">true</PropertyValue>
+        <PropertyValue name="ES6ForFilesThatAreNotPartOfAProject">false</PropertyValue>
         <PropertyValue name="FormatCompletedBlockOnRightCurlyBrace">true</PropertyValue>
         <PropertyValue name="FormatCompletedLineOnEnter">true</PropertyValue>
         <PropertyValue name="FormatCompletedStatementOnSemicolon">true</PropertyValue>
@@ -263,10 +308,15 @@
         <PropertyValue name="InsertSpaceBeforeAndAfterBinaryOperators">true</PropertyValue>
         <PropertyValue name="PlaceOpenBraceOnNewLineForControlBlocks">false</PropertyValue>
         <PropertyValue name="PlaceOpenBraceOnNewLineForFunctions">false</PropertyValue>
+        <PropertyValue name="ShowGruntGulpDialogForAspNet">true</PropertyValue>
         <PropertyValue name="ShowVirtualProjectsInSolutionExplorerWhenNoSolution">true</PropertyValue>
         <PropertyValue name="ShowVirtualProjectsInSolutionExplorerWhenSolutionOpen">false</PropertyValue>
         <PropertyValue name="UseAMDCodeGenerationForModulesThatAreNotPartOfAProject">false</PropertyValue>
         <PropertyValue name="UseCommonJSCodeGenerationForModulesThatAreNotPartOfAProject">false</PropertyValue>
+        <PropertyValue name="UseJsxPreserveForFilesThatAreNotPartOfAProject">false</PropertyValue>
+        <PropertyValue name="UseJsxReactForFilesThatAreNotPartOfAProject">false</PropertyValue>
+        <PropertyValue name="UseSystemCodeGenerationForModulesThatAreNotPartOfAProject">false</PropertyValue>
+        <PropertyValue name="UseUMDCodeGenerationForModulesThatAreNotPartOfAProject">false</PropertyValue>
       </ToolsOptionsSubCategory>
     </ToolsOptionsCategory>
   </ToolsOptions>
