@@ -73,6 +73,7 @@
     <Compile Include="meetup\MeetupTest.cs" />
     <Compile Include="nucleotide-count\DNA.cs" />
     <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
+    <Compile Include="octal\Octal.cs" />
     <Compile Include="octal\OctalTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
