@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 public static class Octal
 {
@@ -10,14 +7,8 @@ public static class Octal
     {
         try
         {
-            int result = 0;
-            int len = value.Length;
-            for(int i = 0; i < len; i++)
-            {
-                int oct = ParseOctalValue(value[len - i - 1]);
-                result += oct * (int)Math.Pow(8, i);
-            }
-            return result;
+            int i = value.Length - 1;
+            return value.Select( oct => Parse(oct) * (int)Math.Pow(8, i--) ).Sum();
         }
         catch(ArgumentException)
         {
@@ -25,7 +16,11 @@ public static class Octal
         }
     }
 
-    static int ParseOctalValue(char c)
+    /// <summary>
+    /// Parse a character representing an octal digit in a
+    /// string into its numeric format
+    /// </summary>
+    static int Parse(char c)
     {
         if(c < '0' || c > '7')
             throw new ArgumentException("Must be 0 through 7", nameof(c));
