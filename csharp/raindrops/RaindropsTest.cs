@@ -3,9 +3,9 @@ using NUnit.Framework;
 [TestFixture]
 public class RaindropsTest
 {
-    [TestCase(1, Result = "1")]
-    [TestCase(52, Result = "52")]
-    [TestCase(12121, Result = "12121")]
+    [TestCase(1, ExpectedResult = "1")]
+    [TestCase(52, ExpectedResult = "52")]
+    [TestCase(12121, ExpectedResult = "12121")]
     public string Non_primes_pass_through(int number)
     {
         return Raindrops.Convert(number);
@@ -35,10 +35,10 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Plong"));
     }
 
-    [TestCase(15, Result = "PlingPlang")]
-    [TestCase(21, Result = "PlingPlong")]
-    [TestCase(35, Result = "PlangPlong")]
-    [TestCase(105, Result = "PlingPlangPlong")]
+    [TestCase(15, ExpectedResult = "PlingPlang")]
+    [TestCase(21, ExpectedResult = "PlingPlong")]
+    [TestCase(35, ExpectedResult = "PlangPlong")]
+    [TestCase(105, ExpectedResult = "PlingPlangPlong")]
     public string Numbers_containing_multiple_prime_factors_give_all_results_concatenated(int number)
     {
         return Raindrops.Convert(number);

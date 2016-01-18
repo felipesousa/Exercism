@@ -4,14 +4,14 @@ using NUnit.Framework;
 [TestFixture]
 public class BinaryTest
 {
-    // change Ignore to false to run test case or just remove 'Ignore = true'
-    [TestCase("1", Result = 1)]
-    [TestCase("10", Result = 2)]
-    [TestCase("11", Result = 3)]
-    [TestCase("100", Result = 4)]
-    [TestCase("1001", Result = 9)]
-    [TestCase("11010", Result = 26)]
-    [TestCase("10001101000", Result = 1128)]
+    // change Ignore to false to run test case or just remove 'Ignore = "Todo"'
+    [TestCase("1", ExpectedResult = 1)]
+    [TestCase("10", ExpectedResult = 2)]
+    [TestCase("11", ExpectedResult = 3)]
+    [TestCase("100", ExpectedResult = 4)]
+    [TestCase("1001", ExpectedResult = 9)]
+    [TestCase("11010", ExpectedResult = 26)]
+    [TestCase("10001101000", ExpectedResult = 1128)]
     public int Binary_converts_to_decimal(string binary)
     {
         return new Binary(binary).ToDecimal();
