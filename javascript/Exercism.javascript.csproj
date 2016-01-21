@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,20 +59,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="anagram\anagram.js" />
-    <Content Include="anagram\anagram_test.spec.js" />
+    <Content Include="anagram\anagram.spec.js" />
     <Content Include="bob\bob.js" />
-    <Content Include="bob\bob_test.spec.js" />
+    <Content Include="bob\bob.spec.js" />
     <Content Include="food-chain\food-chain.js" />
-    <Content Include="food-chain\food-chain_test.spec.js" />
+    <Content Include="food-chain\food-chain.spec.js" />
     <Content Include="hamming\hamming.js" />
-    <Content Include="hamming\hamming_test.spec.js" />
+    <Content Include="hamming\hamming.spec.js" />
     <Content Include="test.bat" />
     <Content Include="bob\README.md" />
     <Content Include="word-count\word-count.js" />
-    <Content Include="word-count\word-count_test.spec.js" />
     <Content Include="hamming\README.md" />
     <Content Include="anagram\README.md" />
     <Content Include="food-chain\README.md" />
+    <Content Include="word-count\word-count.spec.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
