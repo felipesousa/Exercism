@@ -1,9 +1,9 @@
-﻿var leap = function () { };
+﻿'use strict';
 
-leap.prototype.hey = function (what) {
-  //
-  // Your solution to the exercise goes here
-  //
-};
-
-module.exports = leap;
+(function () {
+  module.exports = function (year) {
+    this.isLeap = function () {
+      return false;
+    };
+  };
+})();

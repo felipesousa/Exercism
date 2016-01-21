@@ -2,7 +2,7 @@
     "$schema": "http://MortenHoustonLudvigsen.github.io/JasmineNodeTestAdapter/JasmineNodeTestAdapter.schema.json",
     "Name": "Exercism",
     "BasePath": ".",
-    "Specs": [ "**/*[Ss]pec.js" ],
+    "Specs": [ "**/*.spec.js" ],
     "Watch": [ "**/*.js" ],
     "BatchInterval": 250,
     "Traits": [
