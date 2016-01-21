@@ -1,14 +1,16 @@
-﻿'use strict';
+﻿var Hamming = function () {
+  'use strict';
 
-var hamming = {
-  compute: function(dna1, dna2) {
+  this.compute = function (dna1, dna2) {
+    if (dna1.length !== dna2.length) {
+      throw Error('DNA strands must be of equal length.');
+    }
     var diff = 0;
-    var max = Math.min(dna1.length, dna2.length);
-    for (var i = 0; i < max; i++) {
+    for (var i = 0; i < dna1.length; i++) {
       if (dna1[i] !== dna2[i]) diff++;
     }
     return diff;
-  }
-};
+  };
+}
 
-module.exports = hamming;
+module.exports = Hamming;
