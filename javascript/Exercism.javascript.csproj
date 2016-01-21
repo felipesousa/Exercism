@@ -66,6 +66,8 @@
     <Content Include="food-chain\food-chain.spec.js" />
     <Content Include="hamming\hamming.js" />
     <Content Include="hamming\hamming.spec.js" />
+    <Content Include="leap\leap.js" />
+    <Content Include="leap\leap.spec.js" />
     <Content Include="test.bat" />
     <Content Include="bob\README.md" />
     <Content Include="word-count\word-count.js" />
@@ -73,6 +75,8 @@
     <Content Include="anagram\README.md" />
     <Content Include="food-chain\README.md" />
     <Content Include="word-count\word-count.spec.js" />
+    <Content Include="JasmineNodeTestAdapter.json" />
+    <Content Include="leap\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

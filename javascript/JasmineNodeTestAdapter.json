@@ -1,0 +1,18 @@
+﻿{
+    "$schema": "http://MortenHoustonLudvigsen.github.io/JasmineNodeTestAdapter/JasmineNodeTestAdapter.schema.json",
+    "Name": "Exercism",
+    "BasePath": ".",
+    "Specs": [ "**/*[Ss]pec.js" ],
+    "Watch": [ "**/*.js" ],
+    "BatchInterval": 250,
+    "Traits": [
+        "Jasmine",
+        {
+            "Name": "Foo",
+            "Value": "Bar"
+        }
+    ],
+    "Disabled": false,
+    "LogToFile": true,
+    "LogDirectory": "TestResults/JasmineTestAdapter"
+}

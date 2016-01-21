@@ -18,7 +18,9 @@
       matches: function(words) {
         var anagrams = [];
 
-        if (arguments.length > 1) {
+        if (arguments.length === 1 && typeof (words) === "string") {
+          words = [words];
+        } else if (arguments.length > 1) {
           words = arguments;
         }
 
