@@ -80,6 +80,7 @@
     <Content Include="JasmineNodeTestAdapter.json" />
     <Content Include="leap\README.md" />
     <Content Include="rna-transcription\README.md" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

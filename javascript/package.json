@@ -1,0 +1,25 @@
+{
+  "name": "exercism",
+  "version": "1.0.0",
+  "description": "Solutions to Exercism.io problems\"",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "^2.4.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  },
+  "scripts": {
+    "test": "jasmine-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rprouse/Exercism.git"
+  },
+  "author": "Rob Prouse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rprouse/Exercism/issues"
+  },
+  "homepage": "https://github.com/rprouse/Exercism#readme"
+}
