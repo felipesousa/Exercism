@@ -1,8 +1,7 @@
 ﻿(function () {
-  module.exports = function (date) {
-
+  module.exports = function (birthday) {
     this.date = function () {
-      return '';
+      return new Date(birthday.valueOf() + 1E12);
     };
   }
 })();
