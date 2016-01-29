@@ -64,6 +64,7 @@
     <Content Include="bob\bob.spec.js" />
     <Content Include="food-chain\food-chain.js" />
     <Content Include="food-chain\food-chain.spec.js" />
+    <Content Include="gigasecond\gigasecond.js" />
     <Content Include="gigasecond\gigasecond.spec.js" />
     <Content Include="hamming\hamming.js" />
     <Content Include="hamming\hamming.spec.js" />
