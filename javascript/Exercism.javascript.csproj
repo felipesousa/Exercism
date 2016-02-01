@@ -70,6 +70,8 @@
     <Content Include="hamming\hamming.spec.js" />
     <Content Include="leap\leap.js" />
     <Content Include="leap\leap.spec.js" />
+    <Content Include="pangram\panagram.js" />
+    <Content Include="pangram\pangram.spec.js" />
     <Content Include="rna-transcription\rna-transcription.js" />
     <Content Include="rna-transcription\rna-transcription.spec.js" />
     <Content Include="test.bat" />
@@ -84,6 +86,7 @@
     <Content Include="rna-transcription\README.md" />
     <Content Include="package.json" />
     <Content Include="gigasecond\README.md" />
+    <Content Include="pangram\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
