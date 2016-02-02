@@ -1,6 +1,6 @@
 ﻿(function () {
   module.exports = function (str) {
-    this.isPanagram() = function () {
+    this.isPangram() = function () {
       return false;
     }
   };
