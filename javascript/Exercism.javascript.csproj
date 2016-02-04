@@ -70,7 +70,7 @@
     <Content Include="hamming\hamming.spec.js" />
     <Content Include="leap\leap.js" />
     <Content Include="leap\leap.spec.js" />
-    <Content Include="pangram\panagram.js" />
+    <Content Include="pangram\pangram.js" />
     <Content Include="pangram\pangram.spec.js" />
     <Content Include="rna-transcription\rna-transcription.js" />
     <Content Include="rna-transcription\rna-transcription.spec.js" />
