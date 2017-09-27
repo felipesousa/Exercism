@@ -14,7 +14,7 @@ public class RandomKeyCipherTest
     [Test]
     public void Cipher_key_is_made_of_letters()
     {
-        Assert.That(cipher.Key, Is.StringMatching("[a-z]+"));
+        Assert.That(cipher.Key, Does.Match("[a-z]+"));
     }
 
     [Test]
