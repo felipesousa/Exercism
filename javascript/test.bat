@@ -1,3 +1,3 @@
 @echo off
 
-jasmine-node %1
+jasmine-node --color %1
