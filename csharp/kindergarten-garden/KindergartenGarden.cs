@@ -31,7 +31,7 @@ public class KindergartenGarden
     public KindergartenGarden(string diagram, IEnumerable<string> students)
     {
         _diagram = diagram;
-        _students = students;
+        _students = students.OrderBy(s => s);
     }
 
     public IEnumerable<Plant> Plants(string student)
