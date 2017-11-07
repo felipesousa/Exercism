@@ -15,11 +15,14 @@ public class KindergartenGarden
     string _diagram;
     IEnumerable<string> _students;
 
-    static IDictionary<char, Plant> _plants = new Dictionary<char, Plant>() {
-                                             { 'V', Plant.Violets },
-                                             { 'R', Plant.Radishes},
-                                             { 'C', Plant.Clover },
-                                             { 'G', Plant.Grass } };
+    static IDictionary<char, Plant> _plants = new Dictionary<char, Plant>();
+
+    static KindergartenGarden()
+    {
+        var plants = (Plant[])Enum.GetValues(typeof(Plant));
+        foreach(var plant in plants)
+            _plants.Add(plant.ToString()[0], plant);
+    }
 
     public KindergartenGarden(string diagram)
         : this(diagram, new[] {"Alice", "Bob", "Charlie", "David",
