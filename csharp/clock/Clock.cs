@@ -13,6 +13,9 @@ public struct Clock
         // Roll over for the day
         totalMinutes = totalMinutes % MINUTES_IN_DAY;
 
+        // Roll over for the previous day
+        if(totalMinutes < 0) totalMinutes += MINUTES_IN_DAY;
+
         Hours = totalMinutes / MINUTES_IN_HOUR;
         Minutes = totalMinutes - (Hours * MINUTES_IN_HOUR);
     }
