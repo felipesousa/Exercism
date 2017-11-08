@@ -10,7 +10,7 @@ public struct Clock : IEquatable<Clock>
     {
         var totalMinutes = TotalMinutes(hours, minutes);
         Hours = totalMinutes / MINUTES_IN_HOUR;
-        Minutes = totalMinutes - (Hours * MINUTES_IN_HOUR);
+        Minutes = totalMinutes % MINUTES_IN_HOUR;
     }
 
     public int Hours { get; }
@@ -45,7 +45,7 @@ public struct Clock : IEquatable<Clock>
         var totalMinutes = hours * MINUTES_IN_HOUR + minutes;
 
         // Roll over for the day
-        totalMinutes = totalMinutes % MINUTES_IN_DAY;
+        totalMinutes %= MINUTES_IN_DAY;
 
         // Roll over for the previous day
         if(totalMinutes < 0) totalMinutes += MINUTES_IN_DAY;
