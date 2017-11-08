@@ -13,9 +13,9 @@ public struct Clock : IEquatable<Clock>
         Minutes = totalMinutes - (Hours * MINUTES_IN_HOUR);
     }
 
-    public int Hours { get; private set; }
+    public int Hours { get; }
 
-    public int Minutes { get; private set; }
+    public int Minutes { get; }
 
     public Clock Add(int minutesToAdd) =>
         new Clock(Hours, Minutes + minutesToAdd);
@@ -23,7 +23,8 @@ public struct Clock : IEquatable<Clock>
     public Clock Subtract(int minutesToSubtract) =>
         new Clock(Hours, Minutes - minutesToSubtract);
 
-    public override string ToString() => $"{Hours:00}:{Minutes:00}";
+    public override string ToString() =>
+        $"{Hours:00}:{Minutes:00}";
 
     public override bool Equals(object obj)
     {
@@ -31,8 +32,13 @@ public struct Clock : IEquatable<Clock>
         return Equals((Clock)obj);
     }
 
+    public bool Equals(Clock other) =>
+        TotalMinutes() == other.TotalMinutes();
+
     public override int GetHashCode() =>
-        TotalMinutes(Hours, Minutes).GetHashCode();
+        TotalMinutes().GetHashCode();
+
+    int TotalMinutes() => TotalMinutes(Hours, Minutes);
 
     static int TotalMinutes(int hours, int minutes)
     {
@@ -46,7 +52,4 @@ public struct Clock : IEquatable<Clock>
 
         return totalMinutes;
     }
-
-    public bool Equals(Clock other) =>
-        TotalMinutes(Hours, Minutes) == TotalMinutes(other.Hours, other.Minutes);
 }
