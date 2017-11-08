@@ -4,24 +4,13 @@ public struct Clock
 {
     public Clock(int hours, int minutes)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        Hours = hours;
+        Minutes = minutes;
     }
 
-    public int Hours
-    {
-        get
-        {
-            throw new NotImplementedException("You need to implement this function.");
-        }
-    }
+    public int Hours { get; private set; }
 
-    public int Minutes
-    {
-        get
-        {
-            throw new NotImplementedException("You need to implement this function.");
-        }
-    }
+    public int Minutes { get; private set; }
 
     public Clock Add(int minutesToAdd)
     {
@@ -33,8 +22,5 @@ public struct Clock
         throw new NotImplementedException("You need to implement this function.");
     }
 
-    public override string ToString()
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    public override string ToString() => $"{Hours:00}:{Minutes:00}";
 }
