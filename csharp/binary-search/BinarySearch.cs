@@ -16,18 +16,18 @@ public class BinarySearch
         int offset = 0;
         while(length > 0)
         {
-            int index = length / 2 + offset;
+            int index = (length - 1) / 2 + offset;
             if(_input[index] == value)
                 return index;
 
             if(_input[index] > value)
             {
-                length = index;
+                length = index - offset;
             }
             else
             {
-                length -= index;
-                offset += index+1;
+                length = _input.Length - index - 1;
+                offset = index + 1;
             }
         }
         return -1;
