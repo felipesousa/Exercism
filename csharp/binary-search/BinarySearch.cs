@@ -12,21 +12,21 @@ public class BinarySearch
 
     public int Find(int value)
     {
-        int[] search = _input;
+        int length = _input.Length;
         int offset = 0;
-        while(search.Length > 0)
+        while(length > 0)
         {
-            int index = search.Length / 2;
-            if(search[index] == value)
-                return index + offset;
+            int index = length / 2 + offset;
+            if(_input[index] == value)
+                return index;
 
-            if(search[index] > value)
+            if(_input[index] > value)
             {
-                search = search.Take(index).ToArray();
+                length = index;
             }
             else
             {
-                search = search.Skip(index+1).ToArray();
+                length -= index;
                 offset += index+1;
             }
         }
