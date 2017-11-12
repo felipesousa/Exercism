@@ -39,5 +39,6 @@
   <ItemGroup>
     <None Include="bob\README.md" />
     <None Include="word-count\README.md" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
