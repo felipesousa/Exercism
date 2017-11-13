@@ -1,6 +1,8 @@
 class Transcriptor {
     toRna(dna: string): string {
-        return dna.split('').map(this.transcribe).join('')
+        return dna.split('')
+                  .map(this.transcribe)
+                  .join('')
     }
 
     transcribe(dna: string): string {
