@@ -6,16 +6,18 @@ class Transcriptor {
     }
 
     transcribe(dna: string): string {
-        if (dna === 'C') {
-            return 'G'
-        } else if (dna === 'G') {
-            return 'C'
-        } else if (dna === 'A') {
-            return 'U'
-        } else if (dna === 'T') {
-            return 'A'
+        switch (dna) {
+            case 'C':
+                return 'G'
+            case 'G':
+                return 'C'
+            case 'A':
+                return 'U'
+            case 'T':
+                return 'A'
+            default:
+                throw Error('Invalid input DNA.')
         }
-        throw Error('Invalid input DNA.')
     }
 }
 
