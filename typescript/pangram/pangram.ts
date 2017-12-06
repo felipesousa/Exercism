@@ -1,10 +1,21 @@
 class Pangram {
-    constructor( /* Parameters go here */ ) {
-        // Your code here
+    str: string[]
+
+    constructor( str: string ) {
+        this.str = str.toLowerCase().split('')
     }
 
-    isPangram() {
-        // Your code here
+    isPangram(): boolean {
+        this.str.
+        return false
+    }
+
+    getAlphabet(): string[] {
+        const ret = new Array<string>()
+        for (let i = 0; i < 26; i++) {
+            ret.push('a' + i)
+        }
+        return ret
     }
 }
 
